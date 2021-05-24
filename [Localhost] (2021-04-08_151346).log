@@ -1,0 +1,21 @@
+=~=~=~=~=~=~=~=~=~=~=~= MobaXterm log 2021.04.08 15:13:46 =~=~=~=~=~=~=~=~=~=~=~=
+     
+                      MobaXterm Personal Edition v21.0                 
+                   (X server, SSH client and network tools)              
+                                                                         
+       Your computer drives are accessible through the /drives path     
+       Your DISPLAY is set to 172.16.13.137:0.0                         
+       When using SSH, your remote DISPLAY is automatically forwarded   
+       Your HOME folder is not persistent: it will be erased on restart 
+       Each command status is specified by a special symbol ( or )    
+                                                                         
+       Important:                                                       
+      This is MobaXterm Personal Edition. The Professional edition       
+      allows you to customize MobaXterm for your company: you can add    
+      your own logo, your parameters, your welcome message and generate  
+      either an MSI installation package or a portable executable.       
+      We can also modify MobaXterm or develop the plugins you need.      
+      For more information: https://mobaxterm.mobatek.net/download.html  
+     
+
+  08/04/2021   15:13.47   /home/mobaxterm  

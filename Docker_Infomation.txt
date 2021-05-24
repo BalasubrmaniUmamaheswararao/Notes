@@ -1,0 +1,177 @@
+docker info
+
+ 
+
+1. Verify Docker Version
+	Ans: docker version
+
+ 
+
+2. View system wide Information
+	Ans: docker system info
+
+ 
+
+3. Search Docker Images in its Registry Server - alpine
+
+ 
+
+4. Download the latest version of Image alpine
+
+ 
+
+5. Download Ubuntu:14.04 Docker Image
+
+ 
+
+6. List all Downloaded Docker Container Images
+
+ 
+
+7. spinup a docker container for nginx and name it as mynginx1 and
+
+   set a rule in such a way that if any request comes to 9010 port on docker host then that request will be redirected to mynginx1 container on 80 port.
+
+ 
+
+8. spinup a docker container in detached mode for nginx and name it as mynginx2 and
+
+   set a rule in such a way that if any request comes to 9011 port on docker host then that request will be redirected to mynginx2 container on 80 port and should
+
+ 
+
+9. In the above example we have provisioned a container in detach mode, we can have its console using ‘docker attach’ command.
+
+ 
+
+10.List all the running Containers.
+
+ 
+
+11.List all the containers including stopped /shutdown containers.
+
+ 
+
+12.pull a image named myalpine1 for alpine image and do following actions:
+
+a) start the container
+
+b) stop the container
+
+c) restart the container
+
+d) kill the container
+
+ 
+
+13a. Remove a container name myapline2
+
+ 
+
+14. Remove a running container forcefully named myalpine3
+
+ 
+
+15. Delete the image ‘Ubuntu:14.04’ which you have earlier pulled/downloaded.
+
+ 
+
+16. Download the ubuntu latest image and check the history
+
+ 
+
+17. Display Container IP address for myalpine4
+
+ 
+
+18. Display the logs for container myalpine4
+
+ 
+
+19. Inspect the container myalpine4
+
+ 
+
+20. Display the stats for myalpine4 (live streaming /non-live streaming)
+
+ 
+
+21. Display the running processes of a container with ‘docker top‘ command.
+
+ 
+
+21a. Write a command to find out the size of all the Docker objects in your system.
+
+ 
+
+21b. Write a command to find out the details of all the Docker objects in your system.
+
+ 
+
+22. Remove all images that are created more than 12 hours ago
+
+ 
+
+23. Spinup containers and execute the below
+
+ 
+
+docker run alpine ls -l
+
+ 
+
+docker run alpine echo "Hello"
+
+ 
+
+docker run alpine /bin/sh
+
+ 
+
+docker run -it alpine /bin/sh
+
+ 
+
+/ # date
+
+Sat May 30 18:57:24 UTC 2015
+
+/ # date +"%A"
+
+Saturday
+
+/ # date +"%Y-%m-%dT%H:%M:%SZ"
+
+2015-05-30T19:00:38Z
+
+ 
+
+24. Execute the below and publish the ports on which its running.
+
+ 
+
+docker run --name static-site -e AUTHOR="Your Name" -d -P dockersamples/static-site
+
+ 
+
+25. Stop all running containers with a single command.
+
+ 
+
+26. Practice the below docker  commands:
+
+ 
+
+docker image ls
+
+ 
+
+docker image pull redis:latest
+
+ 
+
+docker image pull alpine:latest
+
+ 
+
+pulling from a 3rd party repo

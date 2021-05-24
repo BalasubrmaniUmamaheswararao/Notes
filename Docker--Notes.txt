@@ -1,0 +1,501 @@
+Docker:
+-------
+1) Docker is a open source for developing, shipping and running the application.
+2) Docker can run your application from the your infracture so you can deliver the software quickly.
+3) Docker helps to manage your infracture as same as your application
+4) In production, Docker can reduce the time or delay between the writing of code and running the application.
+5) Docker is a container based envoriment refer: NOTES section.
+
+	NOTES:
+	In now a days, Cloud native app using the container based enivorments deplyed as microservices 
+		and managed on infrasturce on agile Develops process and continuous delivery workflow 
+	
+	12 factor methodologies for Cloud Native app are
+		Packaged as a lighted container.
+		Developed on the best language and framework.
+		Design as a loose coupled microservice.
+		API's interactive and collaboration.
+		Clean separation of the services with statefull and stateless.
+		Isolated server and operating system dependencies.
+		Deployed in the self-service, elestic and cloud infrastructure.
+		Managed agile develop process.
+		Automated capabilities.
+		Policy driven resource allocation.
+		
+6) To get the image use docker pull or docker run.
+7) It is one of the container orchestration tool in market and resolve SDLC
+8) Ubuntu: /var/lib/docker/
+	Fedora: /var/lib/docker/
+	Debian: /var/lib/docker/
+	Windows: C:\ProgramData\DockerDesktop
+	MacOS: ~/Library/Containers/com.docker.docker/Data/vms/0/
+
+Docker commands:
+1) Management commands:
+	app :  is to initialize a new Docker application project
+	buildx : Build with buildKit
+	config : Manage Docker config
+	container : Manage container
+	image : Manage images
+	manifest : Manage docker image manifest and manifest list  note: Manifest is information about an image, such as layers, size, and digest.
+						where digest is provided as a hash of a Docker image supported by the Docker v2 registry format.
+	network : Manage networks
+	nodes : Manage swarm nodes
+	plugins : Manage plugins
+	scan : Manage docker scan 
+	service : Manage docker service
+	swarm : Manage docker swarm
+	system : Manage docker 
+	trust : Manage trust on the docker images
+	volume : Manage volume
+
+2) Commands
+	docker build: to build the docker image
+	docker run : to run the conrtainer
+	commit: create a new image from the container changes
+	cp : copy the files/folder between the container and host local machine.
+	create : create a container
+	diff : inspect the changes between the container file system.
+	exec : run a command in the running container
+	images: list out the images
+	import : import the contents to have new image
+	kill : kill one or more container
+	ps: list of the containers
+	port : mapping the url port number
+	pull: to pull the image from the docker registries
+	push: to push the image to the docker registries.
+	rm : remove the container
+	rmi: remove the image
+	stop : stop the container
+	start : start the container
+	tag : tag to the source image
+	top : to display the top running process of the container ex: docker top <container-id>
+	wait : wait untill one or more container stops, then prints exit codes.
+	
+	
+	
+
+Docker Example:
+1) Create complex requirement within an easy write in Dockerfile.
+2) Push the code up to the git repo.
+3) CI server pull it down and the build the exact the enviroment that will be use din the testing side without need to 
+	configure the CI server at all.
+4) Depolyed to the production
+
+
+		
+6) What can i use Docker for?
+	Container is grant for continuous integration and continous delivery (CI & CD) workflow.
+	
+7) Docker Architecture?
+	It is a docker engine where as three parts in client-server side are	
+			from the below:
+				1) Server 
+						docker daemon- The daemon listens for Docker API request and will create and manage the docket object such as image, 
+						containers, volume and network etc.
+				2) REST API
+				3) CLient docker CLI
+	Major components of docket is 
+			docket image
+			docket container
+			docket volume
+			docket network
+
+			
+8) what is Docker registries which is one of the components ?
+	A Docker registry stores Docker images. Docker Hub is a public registry that anyone can use, 
+		and Docker is configured to look for images on Docker Hub by default. You can even run your own private registry.			
+		When you use the docker pull or docker run commands, the required images are pulled from your configured registry. 
+			When you use the docker push command, your image is pushed to your configured registry	
+			
+9) what are the Docker objects?
+    IMAGE: An image is a read-only template with instructions for creating a Docker container
+	CONTAINER:A container is a runnable instance of an image.
+	NETWORK:
+	VOLUME:
+	PLUGIN:
+	OTHER OBJECT:
+	
+10) what is Docker Engine?
+	Docker Engine which is a client-server application made up of the Docker daemon.
+		a REST API that specifies interfaces for interacting with the daemon, and 
+			a command line interface (CLI) client that talks to the daemon (through the REST API wrapper). 
+	Docker Engine accepts docker commands from the CLI, such as docker run <image>, 
+		docker ps to list running containers,docker image ls to list images, and so on.	
+	Two imponent team or methods are 
+		1) containerd - High level Runtime responsible for entire lifecycle of a container and manages low-level runtime responsible of runc.
+		2) runc - Low Level runtime and persistent process that manages containers.
+		
+11) Different between the DOCKER and DOCKER-ENGINE?
+	DOCKER-ENGINE: Docker Engine which is a client-server application made up of the Docker daemon, 
+					a REST API that specifies interfaces for interacting with the daemon, and a command line interface (CLI) client 
+					that talks to the daemon (through the REST API wrapper).
+	DOCKER: Docker Machine is a tool for provisioning and managing your Dockerized hosts (hosts with Docker Engine on them). 
+			Typically, you install Docker Machine on your local system. Docker Machine has its own command line client docker-machine 
+			and the Docker Engine client, docker. You can use Machine to install Docker Engine on one or more virtual systems				
+		
+		
+		
+Docker full course:
+
+1)What are container?
+	Container is a completely isolated environments which as it own processer, networks, mounts, other services whish as same kernal. 
+	Docker is utilizes the Lx-C container. 
+	Docker container will share the underlying the OS Kernal	
+	Container are not mean to host an OS but it mean to run a specific task or process like instance of web server, application server or a database 
+		or analysis task , If the tasks gets completed container will exits thus, container only lives as long as process inside it .
+		Ex: check docker run Ubuntu because it has no process in it.
+		
+2)What is docker
+3)why we need this?
+	Developing apps today requires so much more than writing code. Multiple languages, frameworks, architectures, and discontinuous interfaces between 
+		tools for each lifecycle stage creates enormous complexity and 
+	There are DB,web, other service etc, it will have developement stack issue and underly issue on OS due to compatible problem like version change etc.
+	If there is any update in serves which need to do the process again and it may be takes other compatible issue for libraries.
+	If new document to setup of the application, then need to go though the setup instration before docker.
+4) what can it do?
+5) Run container
+6) what is image and create a docker image
+	--> Image meanss ollocation of the containers
+	--> Create a image in the docker hub, do
+			1) create the DockerFile (refer the number 16)
+			2) After writing,Dockerfile, docker will follows layers architecture 
+			3) build the image as docker image <image name with tag> ex: docker build Dockerfile -t bala/my-web-app or docket build .
+			4) If there is failure in the middle of build, then rebuild the image at the error oucced line because it will fetch cache data fastly
+			4) to push the image in docker hub using docker push <image name with tag>
+		
+7) Networks in docker
+	--> The automating three network docker are
+			1)Bridge networking (Default network)
+				--> It is private internal network which is donated by docket in the docket host and gives internal IP in the range 172.17.0.0 to 255
+			2) NONE 
+				--> It is not attached to any networks and run in isolated network.
+			3)Host networking.
+				--> It is to access the container externally is to host and this will same port for web container and docket host.
+	--> User defined networks	
+			1) Docker will creates one network bridge but user can create a new network bridge in the one container
+					ex: docker network create \ --driver bridge \ --subnet 182.18.0.0/16 custom-isolated-network(name of network)
+			2) docker network ls --> list all the network 
+			3) To give or insppect the network details, use docket inspect <containername> and there will the networks section in the json to 
+					specific bridge and in that, we have IP address and MAC address.
+	--> Embedded DNS
+			1) If two container like web and mysql wanted to connect eachother ex: mysql.connect(web internal IP ) but it will varies IP 
+				if system rebooted so that docker using the container name by the DNS server in the docker host 
+				  it has two rows are host name and IP
+					
+					
+
+8) Docker compose
+	--> It is totally based on yml file.
+	--> It will run the multi container 
+	--> Each container is run in the stand alone application and communicate with other container in same host.
+Note: Each containers wil have one Dockerfiles which is specificed in single Dockerfile
+	--> run the images with different image in the yml strature 
+			ex: service:	
+					web:
+						image: "bala/web-service"
+					database:
+						image: "bala/database-service"
+					messaging:
+						image: "bala/redis-service"
+					orchestration:
+						image: "bala/ansible-service"		
+	--> use docker compose up 					
+	--> covert run command in to docker-componse.yml
+		docker run --name=vote -p 5000:80 --link redis:redis vote-app
+		docker run --name=redis redis
+		docker run --name=work --link redis:redis --link db:db worker
+		docker run --name=db postgresql:9.4
+		docker run --name=result -p 5001:80 --link db:db result-app
+		
+		as yml
+													|version: 2											 | version: 3	
+			|redis:									|sevices:                                            |sevices:
+			|	image: redis						|	redis:	                                         |    redis:
+			|db:									|		image: redis                                 |       image: redis
+			|	image: postgresql:9.4				|	db:                                              |    db:
+			|vote:									|		 image: postgresql:9.4                       |       image: postgresql:9.4
+			|	image: vote-app						|	vote:	                                         |    vote:	
+			|	ports:								|		  image: vote-app                            |       image: vote-app
+			|		-5000:80						|		  ports:                                     |       ports:	
+			|	link:								|				-5000:80                             |           -5000:80
+			|		-redis							|		  depends_on:	                           	 |	
+  Vesion1---|result:					 Version2---|				-redis					  Version3---|
+	DC		|	image: result-app			DC		|	result:                                  DC      |        result:
+			|	ports:								|		  image: result-app                          |           image: result-app 
+			|		-5001:80						|		  ports:	                                 |          ports:
+			|	link								|				-5001:80                             |                -5001:80
+			|		-db								|		  depends_on:                                | 
+			|work:									|				-db                                  | 
+			|	image: worker						|	work:                                            |         work:
+			|	link:								|		   image: worker                             |              image: worker
+			|		-redis							|		   depends_on:
+			|		-db								|				 -redis
+													|				 -db
+	--> Docker compose build
+			It is build redis and postgresql in the yml by docker hub and own application image, we are just changing 
+					image: worker to build:/worker where /worker is a git repository.
+	
+	--> Docker compose -versions
+			It has two version in docker copose which is above
+				version 1 is has default bridge network so that it uses the link in it.
+				version 2 has automatic dedilated bridge network and continuate to each other between the images 
+									so that elimation the link word in yml
+						  and also as depends-on property for the image which is depends on other images				
+				version 3 is similar to the version 2 for have same strucutre and noted as version 3 in the top and elimantes depends_on	
+		
+
+9) Docker concept in depth
+10) Docker in windows
+11) Docker swam
+12) Docker vs Kubernetes
+13) Docker in develop?
+	Develper team will deplay the war file anf guide to the Operation team but, Operation team will strugge before the docker.
+	But now, using docker, It is easy to deploy and run the application using have war file and DockerFile with create DOcker image 
+		and transfer to option team.
+		
+14) Docker commands:
+	1) docker run <image-name>
+		--> it is used to run the image ex: image is nginx and used run comand means it will create instance of the nginx image.
+		1) docker run <image-name> sleep 5
+		2) docker run redis:4.0 where 4.0 is tag. If no tag specificed, then least version tag is displayed.
+		3) --name is to name the image		
+		4) -d is tag used to run in the background mode of docker container 
+		5) -f is a tag to forcefully stop.
+		6) -i is a tag where used interactive mode(like STDIN to give input to the server) 
+		7) -t is a tag for sudo terminal to terminal 
+		8) -p is a tag to give external port to the image --> port mapping
+				ex: docker run -p 80:5000 kodekloud/simple-webapp
+		9) -d --> use to run in the backgroud 		
+		9) -v is tag used to specific the outside dir and inside dir--> volume mapping
+			ex: docker run -v /opt/datadir:/var/lib/mysql mysql
+			By using this cmd, it will implicity mount the extrenal dir inside the docker host and all the data will store from docker container 
+				to external folder
+			If we remove the container and then all the data will be deleted so that, to persist the data map the directory in outside the docker
+				container on the docker host to a inside the container.
+				
+		10) --entrypoint --> it is used to give the action in syntax. ex: docker run --entrypoint sleep Ubuntu 10.
+		11) --network --> It is used to specificed the networking for the docker ex: docker run Ubuntu --network=host(or none)	
+		12) --mount --> It is used to mount the data from image to volume.It is more preferble one to use in docker not -var/lib/docker
+						ex: docker run \ --mount type=bind, source=/data/mysql, target=/var/lib/mysql mysql
+		13) --link --> this is ussed to lint the images.  ex:docker run --name="vote" 5000:80 --link redis(name):redis(host name) voting-app  				
+		
+		Note: If the imsge is running, then data will store in docker host at var/lib/mysql if image name mysql
+		
+	2) docker ps or docker ps -a for the running or not running status of the container.
+		--> It is used to get the list of information about the containers such as containerID, name of the image, command, created, status, ports
+			name of the container.
+			
+	3) docker inspect <container-id/contsiner-name> 
+		--> to get the addisional information in json format.
+		--> on COnfig section in the json file, we will fine the enivormentvaribale
+			
+	4) docker stop <containerid or container name>
+		--> It will stop the container.
+		
+	5) docker rm <comtainer id/ container name>
+		--> remove the container in the list which is permanently.
+		
+	6) docker images	
+		--> it will shows list of the image in the host.
+		
+	7) docker rmi <image-name>
+		--> remove the image from the host
+		
+	8) docker pull	<image-name>
+		--> to download the image from the docker hub
+		
+	9) docker exec <container-name> cat /etc/hosts
+		--> It is used to execute the container in the docker and print the contents of the etc/hosts
+	
+	10) docker log <container-ID/container-name>	
+		--> to see the log of the container
+	
+	
+15) Docker enivorment variable
+	Executiving the docker inspect <comtainername>,we can see on COnfig section in the json file, we will fine the enivorment varibale
+	
+	
+16) Dockerfile:
+	Dockerfile is a text file in the specifi format(is instruction, arguments format) that docker will understand where Left side with caps is a 
+	instruction to perform specific action to perform image and in the right is a arguments to that instruction.
+	
+		FROM --> Start from a base OS or anthor image and all Dockerfile will start with FROM instruction. FROM Ubuntu
+		RUN --> It is used to run the specificed image in the Dockerfile as all dependenices.
+		COPY--> copies the file from local system to the docker image. COPY . /opt/source-code
+		ENTRYPOINT--> Specified the entry point of the application ex: main method class in java.
+		CMD ---> Execute has like parameter for FROM Ubuntu [cmd] ex: In dockerfile, CMD sleep 10 or CMD ["sleep","10"] where left is execute action.
+				If to elimalate the execute action, use ENTRY POINT in the Dockerfile ex: ENTRY POINT ["sleep"] give as docker run ubuntu-sleep 10
+		
+17) docker CMD vs ENTRYPOINT
+		ENTRYPOINT--> Specified the entry point of the application ex: main method class in java.
+		CMD ---> Execute has like parameter for FROM Ubuntu [cmd] ex: In dockerfile, CMD sleep 10 or CMD ["sleep","10"] where left is execute action.
+				If to elimalate the execute action, use ENTRY POINT in the Dockerfile ex: ENTRY POINT ["sleep"] give as docker run ubuntu-sleep 10
+				If not specificed sleep time in the synax as lie docker run ubuntu-sleep then, error will occured.for that, write two instration 
+				ENTRY POINT and CMD in the Dockerfile ex: ENTRY POINT ["sleep"] CMD["10"]
+				
+18) Docker storage
+	--> Docker storage system and file systems.
+	--> FIle system:
+			--> The files stored in the file system by 
+				1) when we install docker in the system, it will create the folder structure as				
+													var/lib/docker	
+														aufs --> AUFS is a union filesystem. The aufs storage driver was previously 
+																	the default storage driver used for managing images and layers on Docker for Ubuntu
+														containers --> container file is stored here
+														image --> image files is stored here
+														volumes --> volume files stored here
+	--> Type of Storage driver are
+			1) AUFS
+			2) ZFS -->ZFS is a next generation filesystem that supports many advanced storage technologies such as volume management, snapshots, 
+						checksumming, compression and deduplication, replication and more.
+			3) BTRFS--> Btrfs is a next generation copy-on-write filesystem that supports many advanced storage technologies that make it a good 
+						fit for Docker. Btrfs is included in the mainline Linux kernel.
+			4) Device Mapper -->Device Mapper is a kernel-based framework that underpins many advanced volume management technologies on Linux.
+`			5) Overlay --> The overlay network driver creates a distributed network among multiple Docker daemon hosts. This network sits on top 
+						   of (overlays) the host-specific networks, allowing containers connected to it (including swarm service containers) to 
+						   communicate securely when encryption is enabled
+			6) Overlay 2 --> OverlayFS is a modern union filesystem that is similar to AUFS, but faster and with a simpler implementation. 
+							Docker provides two storage drivers for OverlayFS: the original overlay, and the newer and more stable overlay2.	
+																												
+
+19) Layered Architecture?
+	--> it is follows layer order to execute in the dockerfile.txt by build the image docker run Dockerfile -t bala/Ubuntu.
+	--> Two layer are
+			a) CONTAINER layer
+			b) IMAGE layer.
+	--> Order is 
+		ex: 1) Base Ubuntu Layer							|
+			2) change in apt packages						|
+			3) change in pip packeage means dependency.		|-image layer and it is read only and using docket build Dockerfile -t bala/Ubuntu
+			4) Source code 									|
+			5) Entry point .								|
+			6) container data                               |- Container layer, which is used to write the data by using docket run and read write 
+			
+20) COPY-ON_WRITE machanism
+	--> Image layer is read only but docker uses this machanism to copy the image layer to the container layer and then edit it.
+
+21) Draw back on COPY_ON_WRITE
+	--> If the container is stopped or removed then it is erase the file in it. Thus, we can persist the data from the image by using volume	
+			create the volume docker is docker volume create data_volume.
+			docker run -v data_volume:/var/lib/mysql mysql so that it is execute a container in the same docker host. 
+	--> If we are not creating the volume and just run the image then, it will mount the data to volume which will automaticly created.
+
+22) TYpe of mount?
+		two type are 
+			1) volume mount-- is will mount from volume directory
+			2) bind mount  -- is will mount from external directory in the docker host.
+			
+23) Docker compose in network?
+	
+			| version: 2	
+			|sevices:
+			|    redis:
+			|       image: redis
+			|   networks:
+			|        -backend
+			|    db:
+			|       image: postgresql:9.4
+			|    networks:
+			|		  -backend
+			|    vote:	
+			|       image: vote-app
+			|       ports:	
+			|           -5000:80
+			|     networks:
+			|			-front end
+			|			-backend
+ Version2---|
+	DC      |        result:
+			|           image: result-app 
+			|          ports:
+			|                -5001:80
+			|         networks:
+			|			-front end
+			|			-backend
+			|         work:
+			|              image: worker
+			|		 networks:
+			|			-front end
+			|			-backend
+			|
+			|networks:
+			|	front-end:
+			|   back-end:
+			
+24) Docket registry?
+		1) It is central repository of the all images.
+			ex: image docker.io(registry)/nginx(User/Account name)/nginx(Image/Repository name)
+		2) Private registry is a registry is created for organization and to login use docker login private-registry-io and give UN and PW.	
+		
+25) Docker Swarm:
+	Agenda:
+		1) what is container orchestration?
+				a. The container orchestration is the process of deploying and maintain the large number of the container and services of the application	
+					to run as intended. COntainer means isolated enivorment
+				b. It performs to control and automate like this,
+						1) Deployment of the container
+						2) Scaling (update can be made)
+							On scaling, using docket compose, to update your component then,you need to rebuild the component 
+								and shutdown the old service and start a new one  
+						3) Resource allocation
+						4) Load Balancing
+						5) Healthly monitoring
+		2) What is docker swarm
+				1) Docker swarm is a container orchestration tool part of the Docker Engine. With it, developer and IT admi can 
+					deploy and manage the cluster of docker nodes in the virual system where docker nodes means docker container
+				2) Docker Engine will manage the Manager node which as specific task via service and it has all other working node to work its each tasks.
+				3) Manager node will manage, monitor, update the working node and working node will has comtains features of the application.
+					
+			Components of the docker swarm?
+				1) Service
+					Service will define a task which is need to be execute on the manager node and working nodes.
+				2) Task
+					Task is refer to the docker container that execute the commands defined in the service
+				3) Manager node
+					Manager node's resposible is 
+						1) Accepting the commands and creating the service object
+						2) Allocating IP address to the task
+						3) Assigning the task to the working node
+						4) Instructing a worker to the task
+				4) Working node.
+					Working node are reponsible for the checking assigned tasks and executing the containers.
+					
+		3) Build your own docker swarm is?
+			1) Initializing docker swarm 
+					docker swarm init --advertise-addr <manager ip>, this command will used to initialize swarm with manager node when we use this 
+						docker swarm join token id will be create and used this to create worker node.
+			2) Adding the working node to the manager node 		
+					Using this command and execute it, will have say this node has jioned in swarm as worker
+			3) Check swarm state by using docker info. By default, 1 manager node and 2 nodes are created with nodeid and cluster ID.
+			4) List all the nodes using docker node ls one will be leader node and another will be working node.
+			5) Exit the docket swarm, we use docket swarm leave --force
+			6) Remove the node if it is down, then using docker node rm <node-id>
+			7) To add the node again, exective  join command but it has diff. node id.
+			
+		4) Docker swarm service?
+			1) service is the image for a microservice within the context of some larger application. Examples of services might include an 
+				HTTP server, a database, or any other type of executable program that you wish to run in a distributed environment.
+			2) When you deploy the service in the manager node then, it accept the service defintion and task to the working node.	
+		
+		5) How does swarm service will work?
+			1) Docker engine client--> service(docker service create) --> swarm manager(API ->Orchestrator -> Allocator --> Dispatcher --> scheduler)-->
+																							working node( container + worker + executor)
+			2) Create a docket service	
+					docker service create --replicas <no of replicas> --publish <port-mapping> <image -name>
+			3) List out all node running a service
+					docker service ls																													
+			
+		6) Depolyment in the docker swarm
+				1) Service can be deployed in the docker swarm using docker service command but for multiple docker service like DB, web serve, fronted etc?
+				2) For this process, docket as docket Stack deploy which uses TAML file which is meta data files to deploy the multiple service in an app.
+				3) command is docket stack deploy -c name.yaml --nameofyaml
+			    4) TO change the replicas in the service, use	
+						docker service scale <service-id>=<replicas>
+						
+		
+		
+		
+		
+		
+		

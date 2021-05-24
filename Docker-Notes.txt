@@ -1,0 +1,181 @@
+WHat is Docker?
+		Docker is a tool designed to make it easier to create, deploy and run the application by using container.
+		Docker cotainer is a light weight altertive to VM  and it use the host OS.
+		You didn't need to preallocate the any RAM in cntainers.
+		|  container     |
+		|  application	 |
+		|  bins/lib	 |	
+		|  Docker engine |
+		|   Host OS      |
+
+what is a Dockerfile?
+	It is a script file, composed of various commands, and argumented listed successively to automatically perform action to a base image in order to create a new one.
+	This file will have main two line blocks are: comments ex:# print hello world  and commands + argument ex: RUN echo "welcome hold world".
+
+	the command to execute the docker file is 
+		docker build -t <name of the docker image> <Period-> place or path of docker >
+		docker build -t myApchaeImage .
+
+	Commands:
+		1) FROM
+			It is used to specific the base docker image.
+			Without FROM, there is no dockerfile.
+		2) RUN
+			It is to run the docker image 
+			It is a central executing directive for dockerfile 
+		3) CMD
+			It is command similar to the RUN but it is not execute during build but it will get when 
+				container gets instantised using image being built
+			It is first execute command before ENTRY POINT.
+			ex: CMD "echo" "Hello World"
+		4) Entry Point
+			It is used to override the CMD command 
+			When you finished the docker image and then entry point is the first to execute at running the container 
+			ex: CMD "Hello WOrld"
+			    ENTRY POINT "echo"		
+		5) ADD
+			It is used to copy the files from one directory to the another directory.	
+			ex: ADD /my_app_folder /my_app_folder
+			    ADD source dir     destination dir
+		6) ENV
+			It is used to set the environment varible in the docker file like java in docker file
+			ex: ENV SERVER_WORKS 4
+		7) WORKDIR
+			It is used to set where the command defined with CMD is to be executed.
+		8) Expose 
+			It is to specific the port number to enable inside the container and outside the world(i.e. host )
+			ex: EXPOSE 8080	
+		9) MAINTAINER
+			It is to specific the name of author for this image container
+			specific after the front the FROM command
+			ex: MAINTAINER authors_name
+		10) USER
+			The USER directive is too set the UID which is to run the container based on the image built.
+			User who have to run the cntainer.
+			ex: USER 765
+		11) VOLUME 
+			It is used to enable the access from your container to the directory in the host machine
+			It will set all the system path for the docker container
+			ex: VOLUME ["/dir_1","/dir_2",...]
+
+Docker flags:
+	1) -IT means that interactive terminal to the container run from the image
+		IN LINUX, there three communcation are stardard in, stardard out and stardard air 
+	2) sh  which means enter the shell process
+	3) ls -la which is to see list of files in the image using sh process 
+Docker in a nutshell?
+	1) DocketFile--> [docker image] --> docker hub ---> any saver to run docker container in production or test
+	        	     |
+		       [docker container]
+			    VM
+	Docketfile is a file which is build a docker image and the image contains from project code
+	You can run the image to create many docker containers as you want
+	And this image will update to the docker hub and any one take from the hub.
+	
+	2) Another
+	   Dockerfile---> GIT repo ---> Jerkins Server  ---> Test env
+							---> Prod env
+							---> Stagging env
+	Complex requirements for a microservce within an easy-to-write dockerfile
+	push the code to the git repo
+	CI server will build and it is used to production, testing and dev 
+
+
+Why we use Docker?
+		An application works in developer's laptop but not works in Testing or Production. 
+			Due to this problem in computing environment in DEV, TEST and PRO. so that docket is introduced and used.
+	
+Docker components?
+  Docker registry
+	1) Docker registry is a storage component for the docker image.
+	2) We can store the images in public or private repository.
+	3) Docker Hub is a Docker's very own cloud repository.
+	4) WHy? control your images begined stored.
+	5) Integrate the images storage with your-in house developerment workflow.
+
+  Docker Image:
+	1) Read only template used to create the container.
+	2) Build by Docker user
+	3) Stored in the docker hub and your local repository.
+  
+  Docker Container:
+	1) Run the image and isolated application platform
+	2) Contains every thing needed to run the application
+	3) Build from one image 0r many images.
+
+  Docker Compose:
+	1) Docket Compose will make easy to configure and run the application with multiple containers. 
+		Example: three containers like web-app, postgres, redis and all in one called docker-compose. 
+		properties or YML file and run these container in single command
+
+
+what is the Microservices?
+Microservices is consided as a small processors that communicates each other over the network to fullfill one particular goal.
+
+Case study:
+1) Problem :
+	Application are depolyed in the VMs using custom scripts
+	This envorniment was optimized for the legacy java based application.
+  Soluted by docker control system.
+
+Different between the docker container and Virtual Machine?
+	DC will not have ouwn OS and uses the host OS and don't preallactor any ram and very less run time n no to reboot the os.
+ 	VM will used ram space for allocater and very high runtime the DC but we should boot the OS.
+
+
+
+1) docker image build
+| window |->|docker| 
+		   -->|-------------------
+		      |       Web App     | * three top layer are my own application and copying all package whole app and run on the docket image command
+		      |      ASP.NET      |	
+		      |      .NET FX      |
+		      |        IIS        | *Is for web application and need to be web server and need dotnet framework installed and asp.net installed and confiured so that only we run the application and host it to IIS.
+		      | Window Server core| *It is used to run the application becuase it is full dot net spp  
+		      ---------------------  --> | central registry (whole Application |
+
+2) docker container run
+    In window, to run the docker application, it will use the W3WP.exe file in the window server file which is host server, it will make the application as in a isolated unit so I can have multiple container which is run on  the server.
+    On window, w3wp.exe is used to run the container in the window machine.
+    On Linux, tomcat is used to run the container in the linux machine.
+	
+   But, window container can't run on the Linux machine or Linux container can't run on the Windown machine.
+
+3) docker swarm
+	In the docket only.
+		If I were to run a highly available cluster, wishing docker calls a docker swarm then Setup 3 windows nodes and join them together in a swarm and managae them remotely using same set of docket commands.
+		We can mix of the window swarm and linux swarm in the docket 
+
+
+Docker on window:
+
+Commands in docker
+	1) docker version
+	2) docker create <image name> it will fetch the image from third party but not started
+	2) docker pull <image name>
+	3) docker run <image name for container> it will fetch the image from third party and started
+	3) docker run --name "Bala" <image name>
+	4) docker start <container ID>
+	5) docker stop <container ID>
+	6) docker ps and docker ps -a or docker ps --all
+	7) docker search
+	8) docker run -it <image name> sh
+	9) docker exec -it <container ID> echo hello world
+       10) docker run <image name> echo "hello world"
+       11) IN sh process, exit and ls
+       12) docker run -p 3000:3000 <container-id>
+       13) docket run -t tag:version <container-id>
+
+To run the applcation:
+	1) First, run the container in docket
+	2) start or run or open the image
+	3) run the powershell
+
+1) run the container:
+
+	Two steps
+		a) give docker container run.
+		   give microsoft/nanoserver
+		   give powershell write-Output Hello.		
+		
+		
