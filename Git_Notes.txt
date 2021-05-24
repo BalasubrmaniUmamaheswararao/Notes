@@ -1,0 +1,311 @@
+GIT and GITHUB:
+	 To connect with SSH, we need to create the SSH key by using ssh-keygen and new key generate in /c/Users/c-umamahb/.ssh/id_rsa.pub and se ssh -T git@git.com
+	 
+How the git is operating?
+	1) We can use the metaphor of the three trees, and there are different sort of collection trees and there workflow of the adding and retriving the commits will be 
+		three different versions of files.
+			one tree is to ripen( mature) changes
+			one tree is to stage them
+			one tree is to point on a branch in the your git reps
+	2) Git uses the working directory, the index and HEAD( it is poiter which poits to branch ) for creating and retriving the commits 	
+	
+	File can be changed in the working directory ( local place ) --and--> files placed in the index(it is stagging area) and prepared in to the committed object 
+					and saved in local git repostory ( commited files are compressed files )which is hashed to sha-1 cryptographic  
+									
+	Local Repostory <-git commit- index <-git add- work directory 				
+
+.git directory--> created due to git init:
+	Object folder: The objects directory stores all the content for your database.
+	Refs folder:The refs directory stores pointers into commit objects in that data (branches) for local and remote.
+	HEAD fie:The HEAD file is a points to the branch you currently have checked out, but not to the commit   and 
+	Index file: The index file is where Git stores your staging area information.
+
+
+Core concept of the version control system GIT 
+	3 areas of the git repository
+		1) Working directory
+		2) index
+				Both index and history is contact in the .git directory
+		3) Git History --  will have  commit history and commit has 7 digit hash value specified used the git commit command
+		
+	
+Undo a working directory
+	working directory as S1
+	Stagging area as S1
+	
+	git stash 
+	or 
+	git checkout -- <file_name>
+
+
+-------------need to check ------------	
+Undo a stagging area
+	working directory as S1
+	Stagging area as S1	
+	
+	git diff --staged
+	git restore -- <fille_name>
+	or 
+	git checkout -- <file_name>
+	
+---------------------------------------	
+	
+Agenda:
+	Version Control.
+	Version Control tools.
+	Github and Git
+	Git Operation and command 
+	
+Version control
+	It is management of the changes to documents, computer program, large web sites and another collection of information.
+	Theres changes are called as versions.
+ What is VC:
+	Every time, we makes any changes in the local project directory and VC will create a snapshot of the project and save it in VC remote. 
+		These snapshot are known as different version.
+		
+ Why is VC:
+	It is used for collaboration ont he team
+	Storing Versions and Code
+	Backup
+	Analze
+	
+Version Control tools:
+	Git - DVCS
+	SVN - CVCS which don't as local repository
+	CVS - CVCS which don't as local repository
+	Mercurial - DVCS	
+
+Git vs GITHUB
+GIT is a VCS tool that allows to create a local repository. 
+	It is a distributed version contorl tool that support distribued, non linear workflow, by providing data assurcing for developer quality service.
+	
+GITHUB is a centerial repository and it will have code document in it.
+
+Feature of GIT:
+	Distributed.
+	Compatiability.
+	non linear.
+	branching.
+	Speed.
+	Open source.
+	Light weight.
+	Secure.
+	Reliable.
+
+Merge Conflicts:
+	problem:
+	If the two developer are, one developer will change the code and commit/push to the repository, other develop has change the code as same as one develop for 
+		one or different code line, then conflict will happened.
+
+	Solution
+	One developer:
+		change the code --> add the file git add --> git commit --> git push origin master.
+	Second developer:
+		change the same code --> add the file git add --> git commit --> git push( here, merge conflict will happened)
+			now, give git pull --rebase origin master (not working)
+					  git mergetool
+					  git rebase --continue
+					  git push origin master
+				
+	Resolve this merge conflict are
+		1) merge tool
+			a) git config --global merge.tool kdiff3
+
+				
+
+Branch in git:
+	Branchs allow you to work on other feature.
+	There can be include in the main line of your project.
+	The main branch is changes get merged back into, is called as master.
+	Create a branch is extact replicate of the master branch or default branch
+	
+how the git is internally manages the branches	
+	When commiting, It also will create a pointer to the pervious commit
+	And git has additional pointer is called HEAD. HEAD will point to last commit of the branch.
+
+Type of Branch:
+	1) Local
+			1) master
+					It is default branch from the git while executing git init and has get merged to the many other branchs.
+			2) DEV/Feature/Bugs
+					This branch is created for developed to work indiviually without disturb the other developer.
+					Conventions are 
+						feature/branch_name
+						bug/brach_name
+						release/brach_name
+	2) Remote
+			Branches created by someone else or team person
+			remote tracking branch take the form <remote>/<branch>
+
+Note:
+	1) When clone the repostiory, origin master and local master will be created and one coomit will happened.
+	3) When the git log will work when there is any git commit.
+	4) Snapshot means commit the files and also called as version.
+	5) History will be created in the .git directory.
+	6) Use the alias graph="git log --all --decorate --oneline --graph".
+	7) use ; to execute the comment in single line. ex: git add . ; git commit -m "Hello Message".
+	8) fast forward merge : to merge the branch in fast forward merge in the linear line.
+	9) 3 way merge: merge made by recursive strategy.
+	10) If the non merge branch to be branch, then it will says warning like by using git branch -d auth and to succed then use git branch -D auth command.
+	11) Merge conflicts:
+				Conflicts will happened when there is changes in same line in the same files so that git is not understand 
+				Change the two branch code in the same name in same file ex master and dev branch.
+				git checkout master
+				git merge dev
+							error: \Auto-merging Stash.java
+										CONFLICT (content): Merge conflict in Stash.java
+										Automatic merge failed; fix conflicts and then commit the result.
+										git status: it will help as to abort the merge or add the file.
+													error: You have unmerged paths.
+										  (fix conflicts and run "git commit")
+										  (use "git merge --abort" to abort the merge)
+							Start merging, branch name will chnage master|merging			  
+				git merge --abort : used to abort the merge  and get pervious path.	
+	12) Detached HEAD state:
+				In normal, Head will point to the branch but one some time, it will point to commit id so that it is called Deteched HEAD state.
+				
+				origin/master branch is a detached head state 
+						To get it, There use the git checkout <comiit id- 7 digits> and enter
+									Note: switching to '01333b7'.
+												You are in 'detached HEAD' state. You can look around, make experimental
+												changes and commit them, and you can discard any commits you make in this
+												state without impacting any branches by switching back to a branch.
+
+												If you want to create a new branch to retain commits you create, you may
+												do so (now or later) by using -c with the switch command. Example:
+
+												  git switch -c <new-branch-name>
+
+												Or undo this operation with:
+
+												  git switch -
+
+												Turn off this advice by setting config variable advice.detachedHead to false
+
+												HEAD is now at 01333b7 modified x java file
+												
+				and chect the graph
+					graph which is alias graph= "git log --all -- decorate --graph --oneline"
+					
+				To get normal HEAD point to remote, use the 
+					git checkout <commit-id-7 digits>
+					git branch <branch_name>
+					git checkout <branch_name>
+						then, HEAD will points to this <brach_name>
+
+								
+				
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   Stash.java
+
+				git merge --abort 	
+										
+
+ 			
+
+Git commands:
+0) git ls-tree -->  list the files in the repository
+				tree means directory and blog means regular file.
+				use:
+				   git ls-tree HEAD
+				   git ls-tree master
+				   git ls-tree <object-id>
+
+0) git remote --> it is used get the remote name as origin
+		git remote -v --> it is used get the remote name extact list name
+1) git init --> it is used to convert directory(folder) to the local repository of git --> git init
+2) git add --> it is used to send the file from directory to the stagging area(point as a directory) --> git add <file name> and git add . and git add -A which is add all
+					and git add <common_letter>*
+3) git diff - It is used to compare the file in working directory and stagging area.
+	git diff --staged by comparing the staged files.
+	git diff master..<branch_name> - it used to compare two branch.
+4) git rm --> It is to remove the file from the working directory
+3) git commit --> it is used to send the changed files from stagging area to the local repository --> git commit -m "message" and git commit -a -m "meesage" ad use always message 
+4) git status --> It is used to show the status of the git to commit or push.
+5) git config --> It is used to assign the settings. Two importent settings are user.name and user.email. --> git config --global user.name "bala"
+												and to set the settings using git config command --> git config user.email "bala@git.com".
+6) git branch --> in GIT, the branch are used to create another line of developing and master is a default branch.
+					feature branch is created to the last commit of the master.
+		git branch --> create the branch or red the branch or delete the branch or checkout the branch
+						1) git branch --> list the all branch
+						2) git branch <branch-name(begin with feature)> --> create the branch 
+						3) git branch --merged --> It is to show the merged branchs 
+						4) git branch -d <brach_name> --> used to delete the branch
+		git checkout --> use the switching branch 
+						git checkout <branch_name> --> move to feature branch --> git checkout feature
+						git checkout -B <branch_name> --> it will crate the branch and check out to that branch and create local branch from the HEAD
+						git checkout -b <branch_name> 6e559cb --> create the branch from the commit hash using git log
+						git checkout -b <branch_name> HEAD~4 --> create the branch from 4 commit priror to head.
+						
+		git merge --> integrate branches together
+						git merge <branch_name> --> merge to other branch or master branch --> git merge feature
+						
+						for merging,
+						git checkout branch_name
+						git checkout master
+						git merge branch_name 
+						git push origin master
+						git merge --squash <branch_name> --< it will algin the branch strucutre in linear style and use git commit 
+						
+		git branch -d --> -d and -D(not perfinned) for detele the branch
+						git branch -d <brach_name> --> is to delete the branch and delete can't happend when checkout to same branch name --> git branch -D feature
+						git push <remote-name>:<branch_name>
+						git push -d <remote-name> <branch-name>
+						
+7) git remote --> connects the local repository to the remote repository.
+8) git clone --> fetchs the code from remote repository which will create a local working place.
+				git clone and git init is equal with the remote.
+				
+				git pull origin <branch_name> --> pull the code from that remote branch --> git pull origin feature
+				git push origin <branch_name> --> push the code to the remote branch --> git push origin feature.
+				
+Advanced GIT commands:
+
+9) git stash --> to save changes made when they are not in the state to commit them to a remote repository.
+				if we change the files and not want to commit the file then use this command,
+				git stash -u 
+				ANd by this, files are not removed in stagging area and get back, use this commands
+				git stash list --> modified the stash list.
+				git stash show --> to inpect the file which is removed 
+				git stash apply --> to get back the modified files.
+				git stash pop --> to pop the code again
+10)git log --> This help give the context and history of the repository
+	git log -p --> what is changed in every commit.
+				when used this command, have all details which is commit in the repository.
+				git log -before="date here" -- show with required date
+				git log --author="by author" -- show the log on that author name
+				git log --oneline -- its shows in one line code.
+
+11)git rebase --> takes a set of commits, copies them and store in outside of your repository
+				 Integrating code from one branch to the enother branch, can be happened throught git merge or git rebase.
+					git merge will preserve(protect) the branch history but git rebase doesn't
+					git merge used to combined the branchs if it is public but git rebase is a private branch never to public branch.
+					git merge is a three way merge where any feature branch can be merge to master. so that git merge will create new comman object 
+							where git rebase doesn't but it will rewrite the history
+
+					
+					Rebase will takes all commits from a particular feature branch on to the base branch.
+					Git will rewind the changes from feature branch and move to the common entry(ancestry - background origin) branch 
+								and forward to the particular feature branch. This will result in fast forward match merge.
+								
+					Rebase is a linear fashion and will cleaner timeline or clean the history of the commits and it is not interputted by merge commits noise 			
+					
+					ex: In feature branch, give git rebase master. where its looks last commit and then current branch.
+
+				
+
+12)git revert --> It helps us to rollback to the pervios version of the file.	
+				git revert HEAD --> it will revert the code.
+				git revert <commit_nummber> -- same it will revert the code.
+
+				while using git revert means it is like a git commit.	
+				
+13) git fetch --> Git fetch will does the same of the git pull but it will stores in the different branch it will not connect with cureen workflow
+				  By using this command, make sure to use git merge so that changes can be seen.
+				  
+				  
+				
+				
+					
