@@ -1,0 +1,35 @@
+1) what is Statefull and Stateless serive in RestAPI?
+	  STATEFULL is that application will save the client data on the one session and use the same client data in the anthor session when client is request.
+			ex:  Postgres, and mySQL are statefull services
+	  STATELESS is that application will not save the client data on the one session so it will not use the client data in the another session.
+			ex:  HTTP,UDP are stateless services
+			
+2) what is a Kernal?
+	  Kernal is a application interface program which will communite hardware and OS.
+	  and It is program has bootloader which as a loads into memory which performs varity of the tasks. 
+	  ex: ubuntu OS.
+	  Written in C and assembly langange
+	  Doc for Kernal: https://www.kernel.org/doc/html/latest/
+	  
+3) what is KVM?
+	  Kernal Virtual Machine is build on Linux into the hypervisor to allows a host machine to run multiple.
+	  KVM converts Linux into a type-1 (bare-metal) hypervisor.
+
+4) What is container in docker?
+      Container is a stanard unit to package all the code and all the dependency 
+		so it can run the application and reliably from one computing environment to the another environment
+			
+5) What is CI/CD?
+	  CI/CD refers to continuous integration and continuous delivery and development.
+	  It is a part of the DevOps process, and creates more efficient pipelines in application delivery through constant code testing, 
+		integration, deployment, and updating.
+	  CI/CD is essential to the cloud, and is better enabled through microservices and containerization.
+	  CI/CD as a service allows service providers to offer automated pipelines for enterprises to build upon.	
+
+6) What is Clustered Operating System (OS)?
+	 Cluster System: Cluster systems like as parallel systems because both systems use multiple CPUs. 
+					But, main difference is that clustered systems are made by two or more individual systems but they are connected with each other.
+	 COS:  Cluster Operating systems are mixer of software and hardware clusters. 
+				Hardware cluster provides help to share of ultra performance disks in between all computer systems, and 
+				Software cluster offers better environment for all system to work together.	
+	  
