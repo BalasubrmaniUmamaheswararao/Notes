@@ -1,0 +1,4 @@
+Steps:
+1) go to docker settings
+2) click on the kubernetes and tick enabe k8s and clic apply and reset 
+3) DOcument kubecli.exe from the google chrome

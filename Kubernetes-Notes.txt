@@ -1,0 +1,233 @@
+Kubernetes:
+----------
+what is a Kubernetes?
+	It is a open source container orchestration tool
+	Developed by Google and later CNCF cloud native compuing foundation
+	It is written by Golang
+	Help you to manage the containerized applications in different deployment enivornment like Physical machine, VM and clound
+	K8s means K, 8 words and then s.
+	Kubernetes will not run the container directly, but it will wrap the containers into the pods and Volume(storge) is placed in every node.
+
+Simple flow of the Kubernetes?
+			manager the containeized app
+Kubernetes -----------------------------> containeized apps ( multiple apps )
+				Deploying
+				Scheduling
+				Scaling
+				Load balancing
+				batch exection
+				rollbacks
+				monitoring
+what is need for orchertration tool?
+	Trend from mono lith to the micro services (micro service means container)
+	And Increase usage of the containers
+	Demend a proper way to manage the hundrends of the container.
+
+what are the feature offer in the orchertration tool?
+	High availability or no downtime
+	Scalability or high performance
+	Disaster recovery - restore or backup
+
+what are the feature of the kubernetes?
+	Automatic bin packing
+		Kubernetes will take care of packaging different jobs(like container) in the bin(Server) in the efficent ways and save the resources. 
+	Service discovery & load balancing
+		It has control over network and communication between these pods with the load balancing across them.
+	Storage orchestration
+		Pod should have storage so that, volume is placed in the each pod and k8s will give three option for storge are Local, AWS cloud and NFS network
+	Self-healing
+		It is replication controller in the k8s
+		If the container fails or node dies or container does not repond back properly then, k8s will restart the container, resechule the container and
+			kill the container.
+
+Install for Kubernetes?
+		Online K8S labs
+			katakoda.com type kubernetesplayground
+			play with k8s
+			play with k8s classroom from docker
+			
+		K8S installation tools
+			minikube
+			Kubeadm
+			
+		Cloud based service
+			Google Kubernetes Enigine( GKE)
+			Azure Kubernetes Engine (AKE)
+			Amazon EKS
+		
+
+
+Main k8s components?
+	
+	Node 
+		1) It is single container or group the pod is called node
+		2) Node is a simple server or VM or Physical machine
+		3) Node is fully of the K8S cluster
+		4) It is called as worker server
+
+	Pod
+		1) It is single container or group the container is called pod.These pod is hosted inside the node.
+		2) Pod is a basic and small unit of K8s and it is abstration over the container. 
+		3) In docker, pod creates running environment or a layer top of the container.The reason is to abstration the container and we can only interact with the kubernetes layer.
+		4) Pod is usually meant to run one application container inside of it.
+		5) We can ran multi container inside the pod but we should have one main application container
+			ex: Application container with database container 
+		6) The two or many container will communicate by IP address(virual network of internal IP)
+		7) Pods can ephemeral( die) and replace with the another container with new IP.
+		8) If there is a new IP, there is inconvenient to communicating with the database when pod restarts because of that another component is used.
+		9) It has unique IP for each pods and has volume of each pod
+			
+	Service
+		1) Service will has multiple pods that work together.
+		2) Service will be replace in the IP address of the pod.
+		3) Service helps as to have self permanent IP address in the each pod and load blancer.
+		4) Lifecycle of the pod and service is not same so that, pod can die but service will not die and permanent IP address is fixed, if new pod is came then, IP will be fixed.
+		5) Application should be access to the broswer so that two services are
+			External Servces
+				Main application is uses external services 
+				External service is a service which will open the communication from external sources.
+					It will have IP with port number like hpps://124.89.101.2:8080.
+				For having the IP adress on the domain name like https:myApp.com. kubernetes uses the Ingress component.
+				For request, it will go to the ingress and then, it will goes to the external services.
+				
+			Internal Services
+				But we don't want Database container to be opened to the public, so that we are using internal service 
+
+		6) Loadd balancer
+
+	Ingress
+		1) For having the IP adress on the domain name like https:myApp.com. kubernetes uses the Ingress component.
+		2) For request, it will go to the ingress and then, it will goes to the external services.
+		3) Route traffic into the cluster
+
+
+	ConfigMap
+		If any changes from the database cofiguration in the application, It is a big process to build it in the docker and used in the pod and again abstract it so that only K8s will have component called ConfigMap
+		It is external configuration of the your application.
+		
+	Secrets
+		If there is database config details in the ConfigMap having userName and passWord but it is not secure to use it thus, K8S has introduced secrets component in it.
+		Used to store secret data. 
+		It will store the credentials in the base 64 encoded format  
+
+	Volumes
+		Volumes is for data storge in the K8S.
+		If DB pod is recreated or restarted, the data will be gone in the database. It is a program or inconvenient using K8S so that, K8S is have volumes components.
+		It will attaches the physical storage to the hard drive to your pod that storage should be in local or remote 
+			|K8S cluster|	
+			|-----------|
+			| Storage   |
+		Note: K8S will not manage or persist the data in it.
+
+	
+	
+	Deployment
+		The blueprint of the second application pod is called Deployment.
+		Deployment is a abstract layer of the pod and it is in top layer of pod.
+		Deployment can be created by us and stateless application.
+		If it is main application pod is die in the K8S then, user can't access this page so that, we are replicating every thing in the multiple servers so we could have another node, thus we have replica or clone of our application which as same service on the main application pod.
+		In order to replicated the second main application pod we willn't create the second pod but we have blueprint of that pods and specific how many replicates we have in it which is called deployment.
+		
+	
+	StatefullSet
+		For database pod dies, then Deployment will not work due to data inconsistencies.
+		StatefullSet is specific for the application of database.
+		It is for statefull database like mongodb, mysql, elastic.
+		In k8s, deploying statefullset is tetious so that practice the database outside of the k8s cluster 
+
+Interview question:
+	How many will supportd?
+	no > 5000 nodes in cluster
+	no > 1500 pods 
+	not > 300000 containers
+	no > 100 pods per node. 
+
+K8S architecture?
+	Two type of Nodes will operate are
+		Master
+			To create a pods or applications
+			Less resource is required and less space is enogh (cpu|ram|storage)
+			There are four process will run in the every master nodes are
+				1) API server
+					If the user want to deploy new application in the kubernetes cluster will using this service from the client via UI k8s dashboard or kubectl or API.
+					It is like a cluster gate way which is to get the initical update or informance from the client to the k8s cluster
+					Act asa gatekepper for authentication  
+					It has cluster healthy.
+					Only one entry point to the cluster
+				2) Scheduler
+					To start the working pod in the one of the working node and scheduler will deside which is node to be used to save the pod by seeing ram space
+				3) controller manager
+					Detect cluster state changes
+					It is used to detect the pods which is die or alive and it will recreated the pods.
+					Controller manager will talk with scheduler and goes to the cluster
+				4) etcd
+					It is key value store of the cluster state or called as cluster brain
+					All cluster changes will updated in to the etcd key vaule process in master node and all other process will get the data from the etcd process.
+			
+
+		Slave(Node process/ worker machine)
+			Each node has multiple pods in it.
+			High resource is required and more space then master nodes,
+			There are three process to be installed on the every node.
+			On process, worker nodes will do the work.
+			Three procress,
+				1) Container runtime:  because pods have application container so Container runtime is needed.
+				2) Kubelet: The process of container runtime is schedule by kubelet
+					    It has interface with both container runtime and the node itself.
+				 	    Kubelet starts the pod with a container inside.
+				3) Kube proxy:The forwarding requests from services to pods is called kube proxy
+					      It will communticate with in same node not to replicate node
+
+			Question:
+				1) how to schedule pod?
+				2) how to monitor?
+				3) how to reschedule/ restart pod?
+				4) how to join new pod?
+
+			Answer is 	
+				all managing process is done by master nodes	
+
+		Add the new master/ Node server:
+			1) get new bare server
+			2) install all the master/ work node process
+			3) add it to the k8s cluster
+ 
+Minikube and kubectl - local setup?
+	Minikube:
+		This will have both master process and working node process in one node.
+		It creates virtual bax in your laptop.
+		Node runs in the virtual box
+		1 node k8s cluster
+		it is used for testing process 
+		But to interact with the cluster, so that kubectl is used.
+	Kubectl:
+		Command line tool for the K8S clusher to create the pods, service, ConfigMap, secret etc.
+		API server is a enable interaction with cluster.
+		This cli is used to the both minikube and cloud cluster
+
+
+commands on kubectl?
+	kubectl config --> information about kubectl and it is located in the .kube/config file
+	kubectl get <commands>--> get the information about pods, nodes, services, deployments, secrets, ingress,configmaps
+	kubectl get namespace --> to get the namespace list.
+	kubectl create namespace <name> --> Namespaces are Kubernetes objects which partition a single Kubernetes cluster into multiple virtual clusters. 
+											Each Kubernetes namespace provides the scope for Kubernetes Names it contains; which means that using the combination 
+											of an object name and a Namespace, each object gets an unique identity across the cluster
+										short name is ns	
+	kubectl describe <resource> <name> --> details information of the resoucre.
+	
+	
+	
+
+Main kubectl commands -K6S cli?
+K8S YAML COnfiguration files?
+Hands-On- Demo?
+
+
+Advanced Concept:
+k8s namespace- organize yours commands?
+k8s ingress?
+Helm- package manager?
+Volumes- Persisting Data in k8s?
+k8s Statefull -Deploying Statefull?
+	
