@@ -1,0 +1,130 @@
+NODE JS NOTES:
+	It is javascript framework used in the server side development
+	It is develop on chrome OS engine
+	It will compile JS directly into a native machine code.
+	
+	
+Agenda:
+		1) Introduction of Node js
+			why node js?
+				
+				CLient Server Architecture:
+					1) User interact with the client machine and send request to the server and then database and again, response to the 
+						client and then user.
+				
+				Multi thread architecture:
+					1) Client interact with the server and goes to the thread pool as each thread and then go to the database and then the flow 
+					   to the client
+							Draw back on multi thread structure is that if limitation thread pool id presented in the thread block again next request 
+								should wait to complete last thread.
+							In shared resources, if thread A is working on the resource then, remaining threads are lock untill thread is completed.
+				
+				Single thread/ event- driven model architecture:
+							The request is collected as a event emitters and then processes to the event loop mechanism(single thread) in queue and 
+								thread pool and after go to the database.
+									Thread pool as  File system IO works
+													Network works
+													Process works
+													other works
+		
+				Differece between Multithread archicuture and Event-Drived or Single thread archicuture
+					Multithread =Lock application - one thread should wait for other thread
+					Event-Drived=Only one thread which is a repeatly fetchs an event
+					
+					Multithread =Using incoming request model
+					Event-Drived=Using queue and then process it.
+					
+					Multithread =Uses Context switching due to multi thread 
+					Event-Drived= no context switching due to single thread
+					
+					Multithread =Synchronous function which as no callback function 
+					Event-Drived= Asynchronous function which as callback function.
+
+			what is node js?
+				It is open source runtime enviroment and work on the server side application and is a single thread
+				To execute the code uses Google V8 engine
+				It is cross plat enviroment and runs in multi system like MAC, window Linex and FreeBSD
+				It follows even- driven model and non blocking IO, this is optimized and scalable.
+			
+			What is the feature of the node js?
+				Asynchronous and event-driven
+				Very fast - code executation in Google chrome
+				Single thread anf highly scalable
+				No buffering
+					
+			what is diffence between blocking I/O and Non-blocking I/O ?
+				Blocking IO means that execution of the additional JS operation must wait until the non JS operation gets executed.
+				Non-Blocking IO means that it is asynchronous methods execution in IO way.
+				
+				ex: Weighter and cooker exmaple.
+				
+				
+			
+		2) Basic of Node js
+			Modules of Node js are	
+				NPM	
+					Node Package Manager
+					It provides online repositories of the node js
+						package/modules
+					npm install -> install required from the package.json
+					npm install <module_name> -> install particular module name ex: npm install express
+					npm install <module_name> -g -> install dependency globally
+					
+				GLOBALS
+					It is global object which is available in all modules. You have a global scope(use the object in the any project of the node.js) 
+						and local scope (use the object in the one and particular project of the node js) 
+					GLobal object are _dirname and _filename, timer functions also
+						setTimerOut(()=>{},2000); , setInterval(()=>{},2000); , setImmediate(()=>{},2000);
+						clearTimeOut()-->stop time out object which is created by setTimerOut; , 
+							clearInterval()-->stop interval object which is created by setInterval, 
+							clearImmediate()-->stop imediate object which is created by setImmediate				
+				
+				FILE SYSTEM
+					It provides by simple wrappers around standard POSIX functions.
+					var fs=require("fs");
+					The fs methods are 
+						1) Asynchronous forms => fs.readFile('',function(err,data){}); 
+						2) Synchronous forms  => fs.readFileSync('');
+					Methods for file system module	
+						1) Open file	
+								fs.open()
+								fs.openSync()
+								fs.close()
+						2) Read file	
+								fs.readFile()
+								fs.readFileSync()
+								fs.read() ==> buffer
+						3) Write file	
+								fs.writeFile()
+								fs.writeFileSync()
+								
+				CALLBACKS
+					CALLBACKS is a asynchronous equivalent for a function and is called at the completion of the each task.
+					
+				Events
+					Node js follows event-driven architecture
+					Certain objects(emitters ) periodcally emit events which is futher invokes the listerners
+					Node js will provide consurrency by using events and callback.
+					All object which is emit events are instances of the EventEmitter class
+					
+					ex:
+						var fs=require("fs");
+						var events=require("events");   =>import the events module
+						var eventObject=new events.EventEmitter(); => Create the object which EventEmitter
+						 fs.readFile('text.txt',function(err,data){
+							console.log(data.toString());
+							eventObject.emit('readfile');    => emitting events
+						 });	
+						 eventObject.on('readFile',()=>{   => Registering listner and defining evenrt handler.
+						 console.log("emit is on");
+						 });
+				HTTP
+				
+		3) Node.js NPM
+		4) Node js with express framework
+		5) Node js on RestFull API service like crud operation
+		6) Node js with mysql 
+		7) Node js with mongoDB
+		8) Dockerizing with Node js web based application
+		9) Creating MEAN stack application MEAN means MongoDB, Expressjs, Angularjs and Node js
+		10) Interview questions
