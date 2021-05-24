@@ -1,0 +1,237 @@
+Jenkins:
+-------
+	It is a open surce automated server or is a CI server and is a back bone of the Devops.
+	It is written in java	
+
+Agenda:
+	1) Introduction of CI.
+	2) Introduction of Jenkins.
+	3) CICD pipeline concepts.
+	4) Jenkins Docker intregrates.
+	5) Jenkins GIT intregrates.
+	6) Jenkins Selenium intregrates.
+	7) Introduction of Jenkins X.
+	8) Jenkins interview questions.	
+
+Introduction of CI
+	Before CI
+		Long wait to test code
+		Diffcult to debug the code
+		Slow software delivery process
+		Infrequent(unusual) feedback cycle
+	After CI
+		CI is a server used to compile, test and deploy.
+			ex: Amazon is a great example where release can be every 11 secs fastly.
+		It is fixes the feedback and time issues.
+		
+Introduction of Jenkins:
+	It is open serve automation tools.
+	It is written in java	
+	As many plugins, in that it has continous in it also
+	
+	Jenkins as
+		Build
+		Document
+		Package
+		Test
+		Deploy
+		Static analysis
+
+	Jenkins Architecture:
+		Source code( GIT ) --> Jenkins Server( Jenkins Build server, Jenkins Test server and Prodution server for deployment)
+		
+			
+Jenkins Master Slave architecture:
+	This architeature is used to have scalability.
+	
+	Jenkins server will work for minumun jobs but for more jobs, then we need to have master slave architerate where master is a jenkins server and slave will be
+			1 or more server like windows, linux and mac.
+		   Slave will commiute with master via TCP/IP connection only.
+			It will have JNLP(Java Network Lanuch Protocol  ) agent.
+	It is also called as distributed Jankins build.
+	
+Introduction of Distributed Jenkins build:
+	The master-slave architecture of Jenkins is used for distributed build environments, where the workload of building projects is distributed 
+		to multiple agent nodes or slaves. We can also different environments for each build.
+	It will use to have configure the master node and slave node.
+	It would manage the node for distributed jobs.
+	Master node will get the information of job for slave node.
+
+Advantage:
+	Parallel build
+	Replacing any system down node instance
+	Load distribution
+	COst effective.
+	
+	
+How to lanuch the jenkins slave node:
+	There are four method
+		by agents via scm
+		by agent via java web start
+		by windows slave
+		by cmd on master.
+		
+CICD pipeline in jenkins.
+	Before pipeline:
+		There are followed Jenkins Build flow, Jenkins Build pipe plugins and Jenkins workflow but there are some drawback in it.
+	After pipeline:
+		This, Jenkins pipeline is introducted which is single platform that run entire pipeline as a code
+		All the standard jobs defined by jenkins which are in one script and store in the git vcs.
+		In Jenkinsfile, we can get the workflow of the entire code.
+		
+WHat is a Jenkinsfile?
+		It ia a text file that stores the flow of the pipeline as a code entire application.
+		It is written in Grooving DSL.
+		There are two syntax are	
+			1) Declarative pipeline
+				It is a locally written and store in the vcs.
+				The code is defined in the pipeline block in the Jenkinsfile.
+				
+			2) Scripted pipeline
+				It is a wriiten on the jenkins UI instances
+				The code is definied in the node block.
+				
+Pipeline Concept:
+
+	Pipeline:
+		A user can definied pipeline block which as all the stages. It is a declarative pipeline.
+			ex:
+			pipeline {
+						}
+						
+	Node:
+		A node is a machine that execute the workflow of the application. It is a scripted pipeline.
+		ex: node {
+					}
+					
+	Agent: 
+		Agent is to allocate an executor for the builds. It ia defined for entire pipeline or specific stage.
+		Parameter are 
+			Any: any pipeline or stages
+			None: It is only for root of the pipeline
+			Label: execute pipeline/ stgae on the label agent
+			Docker: Uses the docker container.
+				pipeline {
+					agent{
+						docker{
+							image 'ubuntu'
+							}
+				}
+		}
+	Stages:
+		It is contain all the work cmd and each stage perform a specific task.
+		pipeline {
+			agent any
+			stages{
+				stage(''build) {...}
+				}
+			}
+	Step:
+		It is to carried out in sequence to execute the a stage
+		pipeline{
+			agent any	
+				stages{
+						stage ('build'){
+						step {
+						}
+						}}}}
+						
+	Parallel:
+	When:
+
+	Script Pipeline Demo:
+
+			node{
+			 for(int i=0; i<2; i++){
+				stage "stage #"+1
+				print('')
+				if( i==0)}
+					git path
+					echo ''
+				else{
+				build 'declarative pipeline'
+				echo "Running stage"
+				}				
+			}
+			
+
+Jenkins Docker Integration:
+	Docker file --> virual machine(DOcker image with docker container) --> docker hub --> stagging server/ production server.
+
+what is miroservice?
+	Before microservice, there are used monolithical architecture where it was a single instance for all the services.
+	On microservice, there are separate every services as a single module so that its resolve the monolithical draw back and reduce the time.
+
+Advantage of Microservice:
+		1) Independent development
+		2) Indepenented deployment
+		3) Fault Isolation
+		4) Mixed technology stack
+		5) Scaling.
+		
+Different between VM and Docker:
+VM     : If we have five micro service to be deploy in VM, needs 5 vm  in the single machine
+Docker : Same, we have five micro service to be deployed,then docker will have 5 docker containers in the single VM at one machine.
+
+VM:  Developer Laptop ---> 5 VM's
+Docker:	Developer Laptop --> 1 vm --> 5 Docker containers.
+
+Flow of Jenkins with docker:
+	Git as 4 services wiht separate Dockerfile --> Jenkens sevrer (mvn install--> 4 jars --> 4 docker image services)-->docker hub --> stagging/production server.
+	
+
+Jenkins Selenium Integrator:
+	Selenium is an open source tool which automates web brower testing.
+	It is mainly used for functionally or regression testing.
+
+Selenium support:
+	Programmimg support --> Java, C#, Python, perly, Ruby and PHP.
+	Web broswer support --> GC, IE, firefox, Opera.
+	Operating system support --> Windows, MAc , Linux.
+
+Selenium role in the Devops:
+   It is used as continous testing.
+   To achive continous testing, Selenium needs Jenkins and TestNG(for test reports)
+	
+Achiving Continous testing:
+	Five steps are
+	1) Create test case with selenium on eclipse IDE or any IDE.
+	2) Create XML files for executing TestNG test suit.
+	3) Create window batch file
+	4) Build the jenkins build using the batch file
+	5) We can schedule job and send the report via email notification by configure option as Jenkins--> Confige-->email notification and perdicslly give cron syntax
+	
+Introduction of Jenkins X:
+	It is created by James Strachan in mar 2018 who was created groovy, apache camel.
+	It supports K8S, cloud native and CICD pipeline.
+	Jenkins X supports many number of K8S and which is to buidling the docker container where stores in the docker registry and deployed in K8S.
+
+Features of Jenkins X:
+	Automated CICD pipeline.
+			It has allows the command line tool which hasJenkins X to be installed inside the K8S clusher and import the project of bootstrap the new application.
+			Jenkins X create pipeline foe application automatically.
+	Environment properties
+			Jenkins X allows different virual envorment to created like staging/ production using K8S name space
+	Serverless Jenkins:
+			Jenkins X is a serverless Jenkins due to have many cpu, memery
+	Preview Enviroment
+			Jenkins has automattically created preview envormentusing the pull command is execute or manually created.
+			
+Different between Jenkins and Jenkins X:
+
+Jenkins: It is a unopinonted view.
+Jenkins X: It is a opinoned view ex: docker, K8S
+
+Jenkins: Required sereval intregation and plugins to configure.
+Jenkins X: Simplifier configure.
+
+Jenkins:  Adapt to the process where are required.
+Jenkins X: Definite process
+
+Jenkins: first GUI approved
+Jenkins X: CLI/ GUI approved
+			
+	
+
+	
+		
