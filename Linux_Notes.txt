@@ -1,0 +1,200 @@
+Linux:
+	It is a free open source OS and serve OS where OS is a software to directly manages hardware and resouce like CPU, memory and storage for multiple user.
+	It is a kernal not a OS on its own.
+	Linux is created in 1991 based on the UNIX OS.
+	It use the monolithic kernal used in the linux for improving preformance and it is dynamically driver load in it.
+					where kernel is used to connects the system hardware to the application software and Kernel is part of the operating system.
+						And the most crucial. For it to be an OS, it is supplied with GNU software and other additions giving us the name GNU/Linux
+	To make a linux to micro service by using Berkeley Packet Filter.	
+	Linux has an abstract layer which is  
+			1) to govern the differect file systems, but for user file system look like a hierarchical directery tree.
+			2) Networking dervice oriented
+			3) virual file system
+	Linux storger will accessed through page cache with virual memory systems.
+	For minimuize duplicated files sharing in Linux, user pair sharing and copy on write in the memory  management system.
+	
+
+HIstory of Linux:
+			Unix OS is mother of the Linux OS.
+	1969 -- C and Unix OS is introducted.
+	1970 -- declared the uxix os has commercial use
+	1980 -- Compnaies are not used Unix but created own OS like IBM as AIX, Solaries as Sun OS.
+	1980's mid--GNU team as GNU project where to access the OS for free of cost, author is richard and ,
+			Now, Linux is just a kernal but not a OS on its own.
+			
+Linux vs Windows
+	1) what is windows
+			It is licensed operating system which is designed for individual.
+			it is ease to use, portable and multi operate enivorment.
+			It use hybrid kernal in old version, now micro kernel.
+	2) Linux vs windows
+		a) User
+			Linux  : 
+				3 users in linux
+					1) Regular 
+						a) when regular account is created in linux, when install ubuntu in the system, all files and folders will stored in the /home/  
+							which is home directory
+						b) regular user will access to the home dir but not for other directery.
+						
+					2) Administrative or root 
+						a) It is created at the time of installlation and called as super user acount
+						b) This user can access to all directory, install software, admin priviledges.
+						
+					3) Service
+						a) Linux has widely uses service operating system and services like apache, email etc which will increase the security.
+					
+			windows:
+				4 users account in windowa
+					1) Administrator
+					2) Standard
+					3) Child
+					4) Guest
+					
+		b) Usage 
+			Linux   :
+				Linux mainly used in industry
+			WIndows :
+			    92% using windiw in the systems and graphical user interface
+				
+		c) Kernel
+			Linux   : monolithic kernel which compose more space
+			WIndows : micro kernel
+			
+		d) File systems
+			Linux   : tree like structure is stored in Linux
+					  In unix or Linux, everything is a file.
+			Windows : file and folder is storeed in normal c, d,e drive	
+			
+		e) Security
+			Linux   : it is very stable and secure than window
+			WIndows : it is not secure than linux
+			
+		f) Compatibility
+			Linux   : Linux is not compatibility than window for software and service in it
+			Windows : Winows has more compatibility than Linux for there software.
+			
+		g) Easy to use
+			Linux   : Non-technial user can install Linux and operate the day to day activies like net, music etc
+			WIndows : Window is one easy to use than Linux
+			
+		h) Privacy
+			Linux   : It is a privacy due to having private OS.
+			WIndows : Not privacy even windows will see it.
+			
+		i) Source code
+			Linux  : User can access the source code of this OS
+			Windows: User can not access any source code
+			
+		j) License
+			Linux : Free
+			Window: Money
+			
+List out the distributions are out there?	
+	CentOS- It is one of the most used Linux Distribution for enterprise and web servers. 
+			It is a free enterprise class Operating system and is based heavily on Red Hat enterprise Distro.
+			
+	LinuxMint- It is one of the most popular Desktop Distributions available out there. 
+			   It launched in 2006 and is now considered to be the fourth most used Operating system in the computing world.
+
+	Debian-	Debian is a stable and popular non-commercial Linux distribution. It is widely used as a desktop Linux Distro and is user-oriented. 
+			It strictly acts within the Linux protocols.			
+
+	Ubuntu-  This is the third most popular desktop operating system after Microsoft Windows and Apple Mac OS. 
+			 It is based on the Debian Linux Distribution, and it is known as its desktop environment.		
+
+	RedHat enterprise- Another popular enterprise based Linux Distribution is Red Hat Enterprise.
+					   It has evolved from Red Hat Linux which was discontinued in 2004. 
+					   It is a commercial Distro and very popular among its clientele.	
+	
+	Fedora - It is sponsed by RHEL. 
+		
+Basic Linux commands:
+	pwd - to find out what directory you are currently in
+	cp - allows you to copy files and directories
+		cp [tags] [sourcce] [destriction]
+		1) cp -i -> enter the interactive mode, for overwrite the file.
+		2) cp -n -> does not over write the file
+		3) cp -u -> update the destriny file when the source file is vary from the destrination
+		4) cp -R -> recursive copy , copy even when it is in hidden files
+		5) cp -v -> Verbose, print the informative message like print the status of the files.
+	mv - to move the file or folder.
+		1) mv -i -> enter the interactive mode for over riding the file and folder
+		2) mv -u -> update the destination file when there is any change in the source file.
+		3) mv -v -> it the verbose mode, prints source and destination file or folder.
+	cd - used to change the current working directory in Linux
+	echo - used to move some data into a file
+	mv - used to rename and move and files and directories from one location to another
+	sort - for sorting lines of text files.
+		1) sort file1 file2 -> to sort the multiple files in the alphabrital order
+		2) sort -r file1 - reverse order
+		3) sort -f file1 -> in the insensitive sorting
+		4) sort -n file1 -> numerical order.
+		5) | -> it is pipe command is used to perform the two operator in the one and same command
+					ex: grep am File3.txt | sort -r
+		
+		
+	su -  switch the current user to any other user
+	sudo - allows you to run programs as another user, by default the root user.
+	grep - will search for the word blue in the notepad file
+		1) grep [options] file1 -> result for maching the options to the words in the file. ex: grep am File3.txt
+		2) grep -i [options] file2.txt -> grep offers to search a pattern without looking at the case of the pattern. Use -i flag to tell grep to ignore case.
+		3) grep -v ->If you want to find something which doesn’t match a given pattern, grep allows doing just that with -v flag..
+		4) grep -w ->It’s not always that we want a partial match but instead expect grep to match a complete word only. You can do that with -w flag.
+		5) grep -c -> count Sometimes instead of the actual matched line, we need just the count of successful matches that grep made. We can get this count using -c option.
+		6) grep -r [opt] *->sub folder It’s often needed to search files not just in the current working directory but also in subdirectories. grep allows you to easily do that with -r flag.
+		7) grep -n [opt] * ->grep allows you to print line numbers along with printed lines which makes it easy to know where the line is in the file.
+		8) grep -m[nums] [opt] *->For big files likes logs etc. grep output can be long and you may just need a fixed number of lines in the output instead of matching everything
+		9) grep -A[nums] [opt] *-> Often we need not just the lines which have a matching pattern but some lines above or below it for better context. it is to next line
+		10)grep -B[nums] [opt] *-> it is to pervious line.
+		11)grep -x [opt] *.txt -> print the exact file or Sometimes we need to print lines that match exactly with a given pattern, not some part of it. grep allows -x flag to do just that.
+		12)grep [opt] ^string *.txt -> we can find a string at the start of a line. Here’s how to do it.
+		13)grep [opt] mate$ -> to match the end of the line pattern.
+		14)grep -e [opt] -> for multiple line words pattern ex: grep -e is -e it -e that File2.txt
+	man - used to display the manual page of a given command.
+	cat -  prints the contents of one or more files and merge (concatenate) files by appending one file’s contents to the end of another file
+	chmod - allows you to change the file permissions. It works in two modes, symbolic and numeric.
+	curl - to transfer data to or from a server, using any of the supported protocols (HTTP, FTP, IMAP, POP3, SCP, SFTP, SMTP, TFTP, TELNET, LDAP or FILE)
+	apt-get - used to install and update packages
+	telnet - send to create a remote connection with a system over a TCP/IP network
+	usermod - To add an existing user to a group
+	passwd - To change your own user’s account password
+	touch - used to update the timestamps on existing files and directories as well as to create new, empty files
+	whoami -  used to get the user name and group information along with the respective security identifiers (SID), privileges, 
+					logon identifier (logon ID) for the current user (access token) on the local system
+	whatis - to get brief information about Linux commands or functions
+	whereis - to locate binary, source and manual pages of commands in the Linux system 
+	which - to locate executables in the system. It allows user to pass several command names as arguments to get their paths in the system	
+	gedit - used to search for a string of characters in a specified file and stands for Global Regular Expression Print.
+	nslookup -  used to query specific DNS resource records (RR)
+	ifconfig - 	utility for Linux machines to configure,assign,add,delete,control and query network interface in Unix/Linux machine
+	chown - allows you to change the user and group ownership of a given file, directory, or symbolic link
+	lsof - used to find out which files are open by which process
+	ln - creates a link to that file in the current working directory with the same name as the file it points to
+	chmod - change the permissions
+	chown - change the access permission for file and folder
+	chgrp - change the access permission for the group.
+	
+	
+	permission patterns in the linux are
+		d            rwx          rwx         w-x  				1 			 eduraka 					eduraka						5215500022				aug 2016
+	file/folder     User         Group       other 			Symbolic		Owner name 					Group name 						size 					date
+		type      Permission   Permission  Permission		  link
+		
+	where type is 
+				normal file - "-"
+				directory file - "d"
+				characher specific file - "c"
+				binery specific file - "b"
+				
+	where permission word is 
+				w -write
+				r - read
+				x - Excute
+				
+	where the denotions are
+				u - User
+				g - Group
+				0 - Other
+				a - all
+				
+				

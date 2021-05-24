@@ -1,0 +1,143 @@
+What is Linux?	
+		Linux is an operating system based on UNIX and was first introduced by Linus Torvalds. 
+		It is based on the Linux Kernel and can run on different hardware platforms manufactured by Intel, MIPS, HP, IBM, SPARC, and Motorola. 
+		Another popular element in Linux is its mascot, a penguin figure named Tux.
+
+What is the difference between UNIX and LINUX?		
+		Unix originally began as a propriety( self demaned ) operating system from Bell Laboratories, which later used as different commercial versions. 
+		Linux is free, open source and intended as a non-propriety operating system for the masses.		
+		
+What is BASH?
+		BASH is short for Bourne Again SHell. It was written by Steve Bourne as a replacement to the original Bourne Shell (represented by /bin/sh). 
+		It combines all the features from the original version of Bourne Shell, plus additional functions to make it easier and more convenient to use. 
+		It has since been adapted as the default shell for most systems running Linux.	
+
+Different between SH and BASH?
+	SH(SHell)
+		1) It is a shell command-line interpreter, for Unix/Unix-like operating systems. 
+			It provides some built-in commands. In scripting language we denote interpreter as #!/bin/sh. 
+		    It was one most widely supported by other shells like bash (free/open), kash (not free).
+		2) Is a specific shell
+		3) a command interpreter and a programming language
+		4) Predecessor of BASH
+	BASH(Bourne-Again SHell)
+		1) It is a shell replacement for the Bourne shell. Bash is superset of sh. 
+			Bash supports sh. POSIX is a set of standards defining how POSIX-compliant systems should work. 
+			Bash is not actually a POSIX compliant shell. 
+			In a scripting language we denote the interpreter as #!/bin/bash.
+		2) Is a specific shell
+		3) a command interpreter and a programming language
+		4) Has sh functionality and more
+		5) Successor of SH
+		6) BASH is the default SHELL	
+		7) Bash is superset of sh.
+		
+		
+What is Linux Kernel?
+		The Linux Kernel is a low-level systems software 
+				whose main role is to manage hardware resources for the user. 
+		It is also used to provide an interface for user-level interaction.		
+		
+What is LILO?
+		LILO is a boot loader for Linux. It is used mainly to load the Linux operating system into main memory so that it can begin its operations.		
+		
+What is a swap space?
+		Swap space is a certain amount of space used by Linux to temporarily hold some programs that are running concurrently. 
+		This happens when RAM does not have enough memory to hold all programs that are executing.		
+		
+What is the advantage of open source?
+		1) Open source allows you to distribute your software, including source codes freely to anyone who is interested. 
+		2) People would then be able to add features and even debug and correct errors that are in the source code. 
+		3) They can even make it run better and then redistribute these enhanced source code freely again. This eventually benefits everyone in the community.	
+
+What are the basic components of Linux?
+		1( Just like any other typical operating system, Linux has all of these components: 
+			kernel, 
+			shells and 
+			GUIs, 
+			system utilities, and an 
+			application program. 
+		What makes Linux advantageous over other operating system is that every aspect comes with additional features and all codes for these are downloadable for free.
+
+Does it help for a Linux system to have multiple desktop environments installed?
+		In general, one desktop environment, like KDE or Gnome, is good enough to operate without issues. 
+		It's all a matter of preference for the user, although the system allows switching from one environment to another. 
+		Some programs will work in one environment and not work on the other, so it could also be considered a factor in selecting which environment to use.
+
+What is the basic difference between BASH and DOS?
+		The key differences between the BASH and DOS console lie in 3 areas:
+			- BASH commands are case sensitive while 
+				DOS commands are not;
+			- Under BASH, / character is a directory separator and \ acts as an escape character. Under DOS, / serves as a command argument delimiter 
+				and \ is the directory separator
+			- DOS follows a convention in naming files, which is 8 character file name followed by a dot and 3 characters for the extension. BASH follows no such convention.	
+
+What is the importance of the GNU project?
+		This so-called Free software movement allows several advantages, such as the freedom to run programs for any purpose and freedom to study and 
+			modify a program to your needs. It also allows you to redistribute copies of software to other people, as well as the freedom to improve software 
+			and have it released for the public.		
+			
+Describe the root account.
+		The root account is like a systems administrator account and allows you full control of the system. Here you can create and maintain user accounts, 
+			assigning different permissions for each account. It is the default account every time you install Linux.			
+			
+What is CLI?
+		CLI is short for Command Line Interface. This interface allows the user to type declarative commands to instruct the computer to perform operations. 
+			CLI offers greater flexibility. However, other users who are already accustomed to using GUI find it difficult to remember 
+				commands including attributes that come with it.
+
+What is GUI?
+		GUI, or Graphical User Interface, make use of images and icons that users click and manipulate as a way of communicating with the computer. 
+		Instead of having to remember and type commands, the use of graphical elements makes it easier to interact with the system, 
+		as well as adding more attraction through images, icons, and colors.	
+
+How do you open a command prompt when issuing a command?
+		To open the default shell (which is where the command prompt can be found), press Ctrl-Alt-F1. 
+		This will provide a command line interface (CLI) from which you can run commands as needed.
+
+How can you find out how much memory Linux is using?
+		From a command shell, use the "concatenate" command: cat /proc/meminfo for memory usage information. 
+		You should see a line starting something like Mem: 64655360, etc. This is the total memory Linux thinks it has available to use.
+		You can also use commands
+			free - m
+			vmstat
+			top
+			htop
+			to find current memory usage	
+			
+What is a typical size for a swap partition under a Linux system?
+		The preferred size for a swap partition is twice the amount of physical memory available on the system. 
+		If this is not possible, then the minimum size should be the same as the amount of memory installed.	
+
+What are symbolic links?
+		Symbolic links act similarly to shortcuts in Windows. Such links point to programs, files or directories. 
+		It also allows you instant access to it without having to go directly to the entire pathname.	
+
+Does the Ctrl+Alt+Del key combination work on Linux?
+		Yes, it does. Just like Windows, you can use this key combination to perform a system restart. 
+		One difference is that you won't be getting any confirmation message and therefore, a reboot is immediate.
+
+How do you refer to the parallel port where devices such as printers are connected?
+		Whereas under Windows you refer to the parallel port as the LPT port, under Linux you refer to it as /dev/lp . 
+		LPT1, LPT2 and LPT3 would therefore be referred to as /dev/lp0, /dev/lp1, or /dev/lp2 under Linux.	
+
+Are drives such as hard drive and floppy drives represented with drive letters?
+		No. In Linux, each drive and device have different designations. For example, floppy drives are referred to as /dev/fd0 and /dev/fd1. 
+		IDE/EIDE hard drives are referred to as /dev/hda, /dev/hdb, /dev/hdc, and so forth.		
+		
+How do you change permissions under Linux?
+		Assuming you are the system administrator or the owner of a file or directory, you can grant permission using the chmod command. 
+		Use + symbol to add permission or – symbol to deny permission, 
+			along with any of the following letters: u (user), g (group), o (others), a (all), r (read), w (write) and x (execute). For example, the command chmod go+rw 
+			FILE1.TXT grants read and write access to the file FILE1.TXT, which is assigned to groups and others.	
+
+In Linux, what names are assigned to the different serial ports?
+		Serial ports are identified as /dev/ttyS0 to /dev/ttyS7. These are the equivalent names of COM1 to COM8 in Windows.		
+
+How do you access partitions under Linux?
+		Linux assigns numbers at the end of the drive identifier. For example, if the first IDE hard drive had three primary partitions, 
+			they would be named/numbered, /dev/hda1, /dev/hda2 and /dev/hda3.	
+
+What are hard links?
+		Hard links point directly to the physical file on disk, and not on the pathname. This means that if you rename or move the original file, 
+			the link will not break since the link is for the file itself, not the path where the file is located.			
