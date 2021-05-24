@@ -1,0 +1,135 @@
+NOTE: 
+	1) Every Browser will have localStorage. 
+	2) let keyword is replacement of the var in ES6. and var as lot of issue in the scoping.
+	3) this keyword will point to the global objects .If using broswer means, window is a global object.
+	4) new operator -
+					to call a function, three things happened,
+							new keyword creates a empty object and the object will set to the this keyword and return a object from this function.
+							NOTE: constructor will not have return statement because it will return this as default.
+							
+	5) If create function in js like function cirle(radius){ radius, draw } but inside the broswer, let circle= new Function("radius",`radius, draw`);var const= new circle(1);		
+	6) The object are dynamic in nature, we can add or remove the properties in it.
+	
+	
+	
+	
+	
+	
+	
+OOPS in Javascript:
+	1) OOPS means programming paradigm or style of programming centered around the object rather than function.
+	2) OOPS is to combine a group of related varible and function in to a unit called as Object where varible as property and functions as method.
+	2) OOPS are used in the 5 language are c#, Java, Rudy, Python and Javascript.
+	3) Before the OOPS, there is a procedural programming which as function and data in the single js .
+	4) There are four pillars of the OOPS in JS are	
+			a) Encapsulation
+				  In oops, we group the related varible and functions into object and this unit is called as encapsulation.
+				  Reduce complexity + Increase reusability.
+				  The Developer says, best function are those with no parameters.
+				  
+			ex:
+				Before, there is a decoupled js file
+					let baseSalary= 30;
+					let currectSalary= 40;
+					function getAmount(baseSalary, currectSalary){
+					return baseSalary+currectSalary;
+					}
+				After, there are using the encapsulation OOPS	
+					let amount={
+					let baseSalary= 30,
+					let currentSalary= 40,
+					function getAMount(){
+					return this.baseSalary+this.currectSalary;
+					}
+					};
+					amount.getAMount();
+			b) Inheritance
+				It has super object and elimated redunatant code.
+				elimated redunatant code
+				
+			c) Adstraction
+				It is a make simple interface.
+				Reduce the impact of the change.
+				Reduce complexity and isolate impart of the changes.
+				
+				
+			d) Polymorphism
+				Polymorphism means many+form.
+				REfactor ugly switch case statemwnt.
+			
+	
+a) Objects:
+	A javaScript object is an entity having state and behavior (properties and method). For example: car, pen, bike, chair, glass, keyboard, monitor etc. 
+	JavaScript is an object-based language. Everything is an object in JavaScript.
+	
+	Creating Objects
+		There are 3 ways to create objects.
+			1) By object literal
+					ex: object={property1:value1,property2:value2.....propertyN:valueN}
+					
+			2) By creating instance of Object directly (using new keyword)
+					ex: var objectname=new Object();  
+					
+			3) By using an object constructor (using new keyword)
+					ex: var e=new emp(103,"Vimal Bala",30000); 
+			
+			4) By factory 
+					ex: const a=cricleCounter(1);
+			
+	Factories and Constructor
+	
+	console.log("Object with {}literal array");
+	let circle={
+		radis:20,
+		height:30,
+		calcuteArea: function(){
+			console.log("Object with {}literal array and value is ",this.radis*this.height);
+		}
+	};
+	circle.calcuteArea();
+
+	console.log("Object with fatory");
+
+	function createCircle(radis){
+		return {
+			radis,
+			draw: function(){
+				console.log("Object with fatory and value is", radis);
+			}
+		};
+	}
+	const circleFactory= createCircle(10);
+	circleFactory.draw();
+
+	console.log("Object with new keyword");
+	let a;
+
+	function create(){
+		a= 10,
+		this.b= function(){
+			console.log("Object with new keyword and value is ",a);
+		}
+	}
+	let c=new create();
+	c.b();
+	
+	
+	Primitives/ vaule types and Reference Types
+	Primitives:
+		Primitives are coped by the value.
+			1) Number
+			2) String
+			3) Boolean
+			4) Symbol
+			5) undefinied
+			6) null
+	
+	Reference types:
+		Object type are copied by the Reference address
+			1) Object
+			2) Function
+			3) Array
+	
+	Working with Properties
+	Private Properties
+	Getters/Setterd

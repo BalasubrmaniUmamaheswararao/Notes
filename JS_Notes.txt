@@ -1,0 +1,58 @@
+Java Script:
+
+The version of JavaScript:
+		The Original JavaScript ES1 ES2 ES3 (1997-1999)
+		The First Main Revision ES5 (2009)
+		The Second Revision ES6 (2015)
+		The Yearly Additions (2016, 2017, 2018)
+
+1) First created to make a web pages alive.
+2) Every program is a called as script.
+3) Name is LiveScript before the JavaScript and then, Java is very popular at the time so that name is JavaScript and Now, It is a fully independend language and as
+   own specification called as ECMAscript
+			What is a ECMAscript?
+					ECMAscript is a JS file which standard to ensure the interperability of the web pages and used for client side scripting in WWW but it is used	
+						in the server side called as NOde JS.
+4) JavaScript is not only execute in the broswer but also in the server sid using Javascript engine called as interpetor which is used to execute the JS file.
+5) How does engine works?
+	The engine(broswer) reads "paras" the script.
+	And then it will convert into "compile" the script to the machine language.
+	Thus, Machine code runs, petty fast.
+6) In browser, JS will do?
+	JS has do webpage manipulation, interaction with the user and the web server.
+	React to the user actions or run on mouse clicks.
+	Send the request over the internet.
+	Remember the data on the client side called local storage.
+7) In browser, JS will not do?
+	There is no direct access to the OS functions.
+	JS can easily communicate with the net to the sever where the current page come from but its ability to recieve the data from other site is crippled.
+8) Lanaguage over the JavaScript?
+	CoffeeScript in Ruby.
+	TyoeScript in Angular by Microsoft
+	Flow by facebookKotlin by Java for Andriod
+9) WHat is JavaScript Use Strict?
+	It is directive of ECMAscript 5. 
+	It is not a sstatement but it is to ignored by earlier version of JavaScript.
+	TO make it has strick mode.
+	You can not use the undeclared or defined varibles.
+	ex:     <!DOCTYPE html>
+			<html>
+			<body>
+
+			<p>"use strict" in a function will only cause errors in that function.</p>
+
+			<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+			<script>
+			x = 3.14;    // This will not cause an error.
+			myFunction();
+
+			function myFunction() {
+			  "use strict";
+			  y = 3.14;  // This will cause an error (y is not defined).
+			}
+			</script>
+
+			</body>
+			</html>
+		

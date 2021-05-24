@@ -1,0 +1,58 @@
+JS training:
+
+1) onclick="document.getElementById('demo').innerHTML='Bala'" where demo is a id element in the HTML and innerHTML means that between the  p tags 
+2) <button onclick="document.getElementById('demo').innerHTML='Hello JS'">Click me</button> where  JavaScript can change HTML content.
+3) <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn On</button>
+		<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+		<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn Off</button> where it is JavaScript can change HTML attribute value and src is a attribute of the HTML tags
+4) <p id="demo" style="text-align:center">JavaScript can change the style of an HTML element.</p>
+		<button onclick="document.getElementById('demo').style.textAlign='left'">Click me</button>	where it is JS changes CSS style and style.textAlign is a style element in the HTML.	
+5) onclick="document.getElementById('demo').style.display='none'">click where it is JavaScript can hide HTML elements
+6) <p id="demo" style="display:none">Hello JavaScript!</p>
+	<button onclick="document.getElementById('demo').style.display='block'">Show me</button>where it is where it is JS changes CSS style and style.textAlign is a style element in the HTML.
+
+Insert the JS into many many ways as
+	head tag as sricpt tag
+	body tag as script tag
+	creating a function in the script tag
+	extenal file in the script tag
+	extenal URL link in the script tag as src attribute
+	extenal folder in the script tag as src attribute.
+
+7) <script>
+	function myChange(){
+	document.getElementById('demo').innerHTML='Paragraph Changed'
+	}
+	</script>
+	</head>
+	<body>
+	<p id="demo">Paragraph</p>
+	<button onclick="myChange()">Try It </button>	where JS changes the content by using functions and <script> can inserted in the Head and body taga.
+8) <script src="myScript.js"></script>	 where JS  can inserted js file as src in the script tag.
+9) <script src="https://www.w3schools.com/js/myScript.js"></script> where JS  can inserted js file as URL in src in the script tag.
+10) <script>  document.write(3+7) </script> where JS can write in the HTML place using the script tag.
+11) <script> window.alert(5 + 6); </script> where JS allows window alert dialog in the screen
+
+JavaScript statement
+	JS statement is a separated with semi colon
+	Js Statement is multi line in the one line
+	
+JavaScript Comments
+	Single comments
+	Multi line comments
+	
+12) <script>
+	var carName = "Volvo";
+	var carName;
+	document.getElementById("demo").innerHTML = carName;
+	</script> where it is If you re-declare a JavaScript variable, it will not lose its value.
+	
+JavaScript Varibles
+	a variable without a value will declare as undefinied
+	Adding string and number means "2"+2+3 => 223 and 2+3+'3'=> 53
+	Declaring many variable in the JS is possiable eg: var a=20,b="Bala",c=true;
+	
+JavaScript Assignment
+	=, +=, -=, *=, /= and %=
+
+
