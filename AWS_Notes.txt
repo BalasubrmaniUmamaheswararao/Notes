@@ -1,0 +1,465 @@
+Amazon Web Service:
+-------------------
+what is cloud?
+	Just store the data in the remote place is called cloud.
+	We will rent the services that you need and use only that services that you need
+	
+What is cloud computing?
+	Cloud computing is a platform which is delivery of the computing service such as database, servers, networks, softwares ect over the internet to offer faster innovation.
+	Cloud computing is to store the data on remote server, Process the data from servers, and Accessing the data via internet.	
+
+Before cloud computing?
+	There are three major problem are
+		a) Buy the lot of server so that setup is more expensive.
+		b) High traffic and since, traffic is varing, your server will be idle on most of time.
+		c) Maintaince cost is high and if not, it cause troubleshoot issue
+
+Benefit of Cloud Computing?
+	1) Cost
+	2) Speed
+	3) Productivity
+	4) Performace
+	5) Security - Many cloud providers offer a broad set of policies, technologies and controls that strengthen your security posture overall, 
+					helping protect your data, apps and infrastructure from potential threats.
+	6) Relability - Cloud computing makes data backup, disaster recovery and business continuity easier and less expensive
+	
+Types of Cloud Computing/ deployment model?
+	1) public cloud
+		Public clouds are owned and operated by a third-party cloud service providers, which deliver their computing resources like servers 
+			and storage over the Internet. Microsoft Azure is an example of a public cloud.
+	2) private cloud
+		A private cloud refers to cloud computing resources used exclusively by a single business or organisation. A private cloud can be physically 
+			located on the company’s on-site data center. Some companies also pay third-party service providers to host their private cloud. 
+		A private cloud is one in which the services and infrastructure are maintained on a private network
+			
+	3) hybrid cloud	
+		Hybrid clouds combine public and private clouds, bound together by technology that allows data and applications to be shared between them. 
+			By allowing data and applications to move between private and public clouds, a hybrid cloud gives your business greater flexibility, 
+			more deployment options and helps optimise your existing infrastructure, security and compliance. 
+	
+Type of the Cloud service 0r cloud computing stack?
+	1) Infrastructure as a service (IaaS)
+	2) Platform as a service (PaaS)
+	3) Serverless computing
+	4) Software as a service (SaaS) 
+		
+Different between Standard cloud app and serverleass cloud app?
+	Standard cloud app has ascending order steps are Business logic+ API + Auth+ Workflow+ Plumbing (Java. Python, JS etc) and Static configuration (DB, storage, Permission).
+	Serverless cloud app has ascending order are Business logic(Java, python etc), Configuration Logic (API/AUTH/workflow) and static configuration(DB, Stroge, etc)
+			
+		Open Source AWS serverless are
+			AWS SAM
+			CHALICE
+			SERVERLESS EXPRESS
+			SERVERLESS JAVA CONTAINER
+			
+			serverless
+			APEX - helps out manage the function
+			PULUMI - to manage the application in multiple language
+			
+
+Cloud computing with AWS:
+-------------------------
+
+	AWS is a secure cloud service provider platform which offer computer power, database storage, connect delivery and other functionally need to help the business and grow. 	
+
+	AWS is a one of the leading cloud service provider in the market and need to buy the instance of the service in AWS.		
+			
+	Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers 
+		globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, 
+		become more agile, and innovate faster.	
+		
+	
+Why AWS?
+	It has most services and more feature functionality	within the service.
+	Most secure
+	Fastest piece of innovation
+	Most proven operational expertise like unmatched experience, maturity, reliability, security, and performance.
+	Computer capcity is high. It is 6X times of all cloud provider except AWS.
+	
+Use Case of AWS?
+	1) Manufacturing organisation
+	2) Architecture consulting
+	3) Media market
+	4) Large enterprises
+
+Advantage of AWS:
+	1) Flexibility
+	2) Cost effective
+	3) Scalability
+	4) Security
+	5) Integrate API's
+
+Global Architecture
+	It is divided into two major parts, that is Region and availability zones.
+		where regions means located across the world as more data centers.
+			  availability zone is knows as data centers.
+
+Domains of AWS:
+	1) Compute( ec2 and Elestic beanstalk and AWS lambda)- Amazon EC2 (Elastic Compute Cloud) is a web service interface that provides resizable compute capacity
+															and it is raw server so you can host a website.EC2 is clear slate 
+															and does not have predefined libraries in it and we need to install it ex: java lib.
+											               
+														   Elestic beanstalk-This will help you to deploy the various application in the AWS and has predefined libraries.
+														   
+														   AWS lambda - It is automatic version of the EC2 where we don't get the OS so we don't required the any OS, 
+																		we not deploy the application and just run in the background task.
+																		It is a serverless compute service
+																		
+	2) Migration - AWS has a physical migration as well which means data can be move from the one data center to other datacenter.
+				   It is more secure and In AWS has snowball.
+				   It is in a storage service.
+				   
+	3) Security & Compliance - for security, there are lot of service like IAM( Identification and Authentication Management tool) and KMS which create private 
+									and public keys will keep secure.
+									
+	4) Storage - 1) S3 which works as bucket object kind of thing Your storage place is a bucket and then object in the bucket are know files in the root .
+				 2) CLoudfront which is your content delivery network 
+				 3) Glacier is a plcae store archives because it is highly affortable 
+				
+	5) Networking - We have services like VPC(Virtual Private Cloud), Direct connect router 53( DNS)for connection within the AWS.
+	
+	6) Messaging - It is securing messages and few application will take that as well.In AWS, SES for emailing, cloud trils and cloudworks.
+	
+	7) Database - It is used store the file of the storage and in AWS, Aurora is database which performs SQL options  at a very faster rate.
+					AWS will claims 5 times faster then any sql.
+				 In AWS, has dynamic DB which is non relational DBMS,will real with unstrustured data sources 
+				 
+	8) Management tools - It is used to monitor and in AWS has cloudwatch which has alarms in it.				
+
+Agenta:
+	1) Introduction of Cloud computing in AWS
+		a) service models
+				
+				   DATA
+				APPLICATION
+				  RUNTIME
+				 MIDDLEWARE
+				    OS
+				VIRUALIZATION
+				  SERVERS
+				  STORAGE
+				 NETWORKING
+					
+			
+			Types as called cloud computing stack:
+				1) Infrastructure as a service (IaaS)
+					 With IaaS, you rent IT infrastructure—servers and virtual machines (VMs), storage, networks, operating systems—from a cloud provider on a pay-as-you-go basis.
+					 Services are	
+						a) Server and storage
+						b) Networking firewall/security
+						c) Data center physical plant/building
+						
+					Model is to maintain by this service is 	VIRUALIZATION, SERVERS, STORAGE and NETWORKING
+			
+				2) Platform as a service (PaaS)
+					Platform as a service refers to cloud computing services that supply an on-demand environment for developing, testing, delivering and managing software applications. 
+						PaaS is designed to make it easier for developers to quickly create web or mobile apps, without worrying about setting up or managing 
+						the underlying infrastructure of servers, storage, network and databases needed for development.
+					ex: google app 
+					Services are
+						a) Development tools, database management, business analyis
+						b) OS
+						c) IaaS Services.
+						
+					Model is to maintain by this service is RUNTIME, MIDDLEWARE, OS, VIRUALIZATION, SERVERS, STORAGE and NETWORKING	
+			
+				3) Serverless computing
+					Overlapping with PaaS, serverless computing focuses on building app functionality without spending time continually 
+						managing the servers and infrastructure required to do so.
+					It has no server to provision or manage
+					It has scales with usage
+					Never pay for idle
+					Availablity and fault tolerance build in 
+					
+					Open Source AWS serverless are
+						AWS SAM
+						SERVERLESS EXPRESS
+						SERVERLESS JAVA CONTAINER
+						
+						serverless
+						APEX -helps out manage the function
+						PULUMI - to manage the application in multiple language
+								
+				4) Software as a service (SaaS)	
+					Software as a service is a method for delivering software applications over the Internet, on demand and typically on a subscription basis. 
+						With SaaS, cloud providers host and manage the software application and underlying infrastructure and handle any maintenance, like software upgrades 
+						and security patching. Users connect to the application over the Internet, usually with a web browser on their phone, tablet or PC.
+					
+					SaaS is a cloud prodiver or software which is own by them to its client	
+					ex: gmail	
+					Services are 
+						1) Hosted applications
+						2) PaaS Services
+						
+					Model is to maintain by this service is APPLICATION, RUNTIME, MIDDLEWARE, OS, VIRUALIZATION, SERVERS, STORAGE and NETWORKING	
+				
+				
+				
+				
+		b) Deployment models
+					1) public cloud
+						Public clouds are owned and operated by a third-party cloud service providers, which deliver their computing resources like servers 
+							and storage over the Internet. Microsoft Azure is an example of a public cloud.
+					2) private cloud
+						A private cloud refers to cloud computing resources used exclusively by a single business or organisation. A private cloud can be physically 
+							located on the company’s on-site datacenter. Some companies also pay third-party service providers to host their private cloud. 
+							A private cloud is one in which the services and infrastructure are maintained on a private network
+					3) hybrid cloud	
+						Hybrid clouds combine public and private clouds, bound together by technology that allows data and applications to be shared between them. 
+							By allowing data and applications to move between private and public clouds, a hybrid cloud gives your business greater flexibility, 
+							more deployment options and helps optimise your existing infrastructure, security and compliance.
+		
+		c) Fundamental of AWS cloud
+					1) Type of cloud server provider:
+						a) AWS
+						b) GCP
+						c) Microsoft Azure
+						d) IBM cloud etc
+					
+		
+	2) Compute Service of AWS
+		
+		a) what is instance
+				1) An instance means virual server for runnung the applications on AWS EC2. It can be understood like a tiny part of the computer 
+					but it is actually it is all virtual. 
+				2) For virtual environmentrment where run different OS as a isolated way and run the application using instance called instance of AWS
+				
+		b) AWS EC2 service
+				1) Amazon Elastic Compute Cloud is a web server from amazon that provider resizeable and reusable computer service in the cloud.
+				2) It is raw server and like a peasonnal computer.
+				3) It is one of oldest AWS service.
+				4) We can used this any OS and confiruation to any worker envoriment which is automated by AWS E2.
+				5) Adv.
+					a) Scalable
+					b) cost effective
+					c) highly flexiable
+					
+			Type of EC2 instance
+				a) General Purpose Instance
+					Thees instance is for applications, that require a balance of the performancce and cost.ex: email respose systems.
+					
+				b) Compute Instances 
+					There instance is for applications, that require a lot of processing from CPU. ex: Analysis streaming data
+					
+				c) Memory instances
+					There instance is for applications, that require a lot of ram and it is heavy in nature. ex: Application needs multi tasking or multi processing 
+					
+				d) Storage instances	
+					There instance is for applications,that require are huge in size or have a data set that occupies lot of space. ex: Large sized application.
+
+				e) GPU instance	
+					There instance is for applications,that require are some high graphics rendering. ex: 3D modelling.
+					
+		c) AWS Elastic Beans Talk service
+						
+			what is elastic bean talk?
+			    1) It is automatic version of the EC2 and used to deploy the application so basically just upload the code and your application deployed 
+				     in the AWS infrastructure and has predefinied libraries in it.
+			    2) It is a platform as a service type (PaaS) where you can deployed the application like java etc on the server like Apache tomcat, IIS etc.
+				3) When we using Elastic beanstalk, is to develop  the application and concernate on code and rest will take care by Elastic Beanstalk like EC2 instaceing,
+						auto-scalacing, security and monitoring etc.
+				4) In PaaS, you can get the collection of feedback in different stages in PaaS like developmentstage, deployment stage etc. 		
+					
+			Advantage:
+				1) Quiker deployment 
+				2) Simplifiers opeartion
+				3) Cost effectiveness 
+				4) Multi-Tenant archituture - means shared the application to multiple users.
+				5) High security
+				6) Best User Experience.	
+			 
+			Features of the elastic beans talk?
+				1) Elastic Beanstalk is a fast and simple way to deploy the application.
+				2) Focus on the code and rest will take care by elastic beanstalk
+				3) Automatically scale is avilable.
+				4) Gives freedom to select the AWS resouce like EC2 instance.
+				
+			Components of Elastic beans talk?
+				Application :An application is a collections of components including enivorment, versions and env configuration where the application is similar to the folder.
+								which means all required file to that application is stored in the folder ex:tomcat-app and like elastic beanstalk will create a separate folder.
+								in AWS teams, The folder is called as Application.
+								
+				Application version:
+									If we upload in the Elastic Beanstalk and launched the application, but some changes in the code and again deploy the code in
+										elastic beanstalk and launched it, thus, AWS follow different in it by changes in the version called running verion or application version
+				
+				Environment : It is place where run the application. elastic beanstalk will create multiple environment for the single application 
+							    like tomcat-webapp-dev, tomcat-webapp-test, tomcat-webapp-prod etc.
+								
+				Environment Tiers: When we try to launch the elastic beanstalk enivorment, it will ask the two enivorment server which are 
+									Web server tier - it is to handle the HTTP server environment
+									Worker tier	- it is processing in the backgroup task.
+	
+				Environment Healt: Elastic beanstalk will monitor the health of the web server envoriment in the four colour are Gr(Gay)- indicates the envoriment begin update,
+									G(Green)- Passed health check, Y(Yellow)- Failed one or more checks and R(Red)- failed three or more checks.						
+								
+			Articuture of Elastic beans talk?
+				Web server environment: - handle http request from the clients and diffecent components are 
+					1) Beanstalk Environment - means is a place where depoly and run the application in elastic beanstalk.
+					2) ELastic Load Balancer - If Application receive lot of HTTP requests and load balncer will distribute these request to the all other EC2 instances.
+												Happened when, lauched the enivorment where URL is created in th C name  for elastic load balancer.
+					3) Auto scaling group - It will install few number of the EC2 instace if traffic is high. The trafficis low, then it will terminate the EC2 instances.
+					4) EC@ instance - When launched the Beanstalk env application, beanstalk will assign to the suitable instance by http request, but 
+the software stack  like OS, different software, server are installed on the instance whic is decided by the device called container type.
+					5) HM(Host Manager) - It is software component and has various task like preformace task, instant level events,log files, 
+					6) Security Group( DB ) -It s lie a firewall to your instace which allows client to access the port 80. 		
+					
+				Worker environment	- TO handle all the tasks from the web server environment and is a process that handle the backgroup tasks.
+					1) In AWS resource, resource intensive or time-intensive operations.
+							Email notification
+							Generates Reports
+							Cleanup the database
+							
+				How does two environments communicate?
+					1) We have one web server environment where Beanstalk will have connected to the Sqs and create the sqs message.
+					2) then, this message put in the sqsq in the worker environment where elastic beanstalk will install daemon in the worker environment.
+					3) Deamon will does to pull the sqs message from sqsq and sent the star HTTP- POST to the web application and running at the post 80
+					4) The Beanstalk application will send the HTTP response back to the Deamon.
+					5) And then, URL will execute and htese two environment will communicate.
+
+			DEMO on elastic beanstalk?
+				1) Go to Elastic Beanstalk and use to depoly the application elastic beanstalk.
+				2) click on the Create new application button.
+				3) Give name of the application and click ok so that new application is created and separaect folder will assign to the elastic beanstalk application.
+				4) Create enviorment by clicking the environment and then create new enviorment
+				5) click on the web server enviorment and create web server environment has giving correct application name and domain name and platform.Enter submit
+				6) Environment dashboard is appear and see the output in the page.
+				7) In that page, go to configuration tab. change instance , security group etc now the SG is awseb-e-tzi2b4zivp-stack-AWSEBSecurityGroup-Z88F25R2X7UU 
+				8) After checking, click to upload and depoly the application by referring in the AWS Elastic Beanstalk document and 
+						download wanted zip file codein develop guide.https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/GettingStarted.DeployApp.html
+				9) After download the code, just update file to the enviroment by going to it.		
+				
+				
+		
+		d) AWS Lamba service	
+				1) It is automatic version of the EC2 where we don't get the OS so we don't required the any OS, we not deploy the application and just run the background task
+				2) It is serverless compute service.
+			
+			Why Lamba Service?
+					It is automatic version of the EC2
+					No worry about the underlying archituture
+					For excuting the background tasks 
+					
+		    Use this service
+				AWS SDK( software development kids):
+					It is used by the service with API call to your programming language or platform and API's are defined in it.
+					These API are can be intergated with IDE to use  it easily.Only two IDE is support which are eclipse and VSC
+					
+			Using AWS LAMBA in eclipse IDE
+					1) In eclipse, go to install new software, use https://aws.amazon.com/eclipse and select all plugin and install the software.
+					2)And then, eclipse said for access key and secert key, so click excitinf credential and navigate to 
+						https://console.aws.amazon.com/iam/home?#/security_credentials  and tab access key and download key excel and copy ti paste in eclipse dialog.
+					3) Thus, AWS icon is created in eclipse home page as a AWS explorer.
+
+			DEMO:
+				1) Our aim to create an application and will updated in the S3, the file will be processed by Lamda and in turn will send you email with all the details,
+					If you replied to that email, it will move the file to the specifical folder
+					Flow is 
+						 -----------------website/email-----------------------
+			fileupload  |										              | Reply mail
+					File System(S3)                                           ROuter 53 
+						|										              |for receiving mail
+				Background task( AWS LAMDA)<for send mail-exe function>	     Emailing user ( SES simple email system )	
+						||
+					   SQS( Query )
+				2) Create a bucket in AWS console page called demobucket-aws.
+				3) Select the Propertie tab and click events notification and create function for lambda and save the events,.(Backgroup task)AWS Lambda is completed
+				4) Set create role for function is to go IAM (https://console.aws.amazon.com/iam/home?#/roles). 
+				5) Now, SQS select the SQS in databoard 
+				6) select create query and select fifo query and name as hello-lambda.fifo	
+				7) And click the query file box and choose  config and connect the function to it. 
+				8) For SES, go to SES in AWS, click on email address tab and verify with our email id.
+				9) for SES, domain name should be created using my.dot.tk
+				10) create domain name by this portal and name is awsbala.tk and go to domain, verify the domain and close it.
+				11) We need to have DNS, for go to router 53 and create host domian as awsbala.tk.
+				12) create a rule set in the router 53
+				13) write the function code in IDE and upload it in the AWS
+				
+		e) Instance Pricing models
+				1) On-Demand instace on price
+					It is an instance that you demand, you get it for time period.
+					It is for limited time frame.	
+					
+				2) Dedicated instance on price
+					It is a instace which are given to the organisation so security is better than others.
+					It has or provided extra assurance for the security to the organisation
+					
+				3) On Spot instance on price
+					It is an instance taht is simillar to biddig kind. if the price of the instance is high, then we can't use that instance.
+					
+				4) Reserved instance on price
+					It is an instace which will for longer time to the person or organisation
+					
+			Instance are classificed base on their functionality		
+				1) Burstable - It is used to clear the CPU space for 20% and performancce can be increase.
+				2) EBS Optimised - it is to processing the data for highest speed and gives quick response.
+				3) Cluster Networking- it is to create a form of clusters in AWS ex: group of database and storge for networking
+				4) Dedicated - it is more related to the security part.
+				
+		f) Use case
+			 Edureka needs four instance in the project are
+					1) Analysis of customer's data -  Burstable instance
+					2) Auto response email system - EBS Optimised instance
+					3) Search engine and browsing - Cluster Networking instance
+					4) Confidental Data Processing - Dedicated instance
+			 
+
+	3) Storage Service of AWS -- storage means a bucket or container
+	
+		1) What is cloud storge ?
+				In simple, It is a storage which is avilable as a service and connected over a network.
+				The cloud storage is the storage of data for emails, media, services like websites and backup data.
+				In software term,It is a mechanism that will store the data and let perform the actions for processing and managing it data.
+		
+		2) Cloud storge myths? means cloud storge idea.
+				1) It is suitable for the single or small or large scale organization
+				2) It is not conplexity with cloud.
+				3) It is a eco-friendly
+				4) Less downtime and have disaster recovery and has backup.
+				5) Need to cloud storage.
+				
+		3) Benfits of using cloud for data storage?
+				1) It is customer friendly.
+				2) Secure
+				3) Pocket friendly- you can rent the service.
+				
+		4) Cloud service pratices?
+				1) Scrutinize SLA - It is a agreement for storage 
+				2) Follow the business needs - choose proper storage
+				3) ENsure security.
+				4) plan the storage in future
+				5) besure about the cost.
+			
+		5) Storge service provider?
+				
+		6) Demo on AWS cloud storage?	
+		a) AWS S3 
+			It is highly durable and highly reliable.
+		b) Glacier
+		c) EFS
+		d) EBS
+		
+	4) Netwoorking Service of AWS
+		a) VPC
+		b) Route 53
+		c) Cloudfront
+
+	5) Moniting and management Service of AWS
+		a) Cloud Watch
+		b) CLoud FOrmation
+		c) Load Balancer
+
+	6) Security Service of AWS
+		a) 	IAM	
+	
+	7) Database Service of AWS
+		a) Amazon Redshift	
+		
+	8) Develops of AWS
+		a) AWS codeline
+		b) AWS Codecommit
+		c) AWS codebuild
+		
+	
+		
