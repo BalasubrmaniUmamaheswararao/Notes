@@ -1,0 +1,5 @@
+Virtual Box and Hyper visor:
+1) Virtual Box is a open source and free which is used to have any OS's in it. Download link: https://www.virtualbox.org/wiki/Downloads 
+																							  and click windows hosts
+2) Hyper Visor is called as a Virual Machine Monitor( VMM ) 
+	which is to allows or supports or grants your computer in multiple VM's by usings virtual staring the its resources such as momery and processor.
