@@ -1,4 +1,14 @@
 Step to step to learn Devops:
+	1) Why devops and cloud
+	2) Find keywords are Agile, Quality, Scale of infructure( means Design Pattern), Caching, Case study(ex: Netfix cs),***vertical and Horzontolization scaling,
+			CDN(means networking) and available.
+	3) Linux
+	4) Basics of BASH/Python (functional and OOPS concept)
+	5) Common Infra Server like ***DNS, HTTP, SSL, Web server like Apache, nginx, IIS.,Reverse proxy ex: nginx, Load Balance like ***Layer4,***Layer7
+	6) 	CI --> GIT, Jenkins
+	7) Configuration management- what?, and tools like ansiable, chef and puppet
+	8) virtualization -> type of virtualization, Docker
+	9) Monitoringand logging-> Linux for logging and Nagios for Monitoring.	
 
 
 Devops tools***:
