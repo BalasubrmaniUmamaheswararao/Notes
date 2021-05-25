@@ -1,3 +1,16 @@
+Step to step to learn Devops:
+
+
+Devops tools***:
+	Linux
+	GIT
+	Jenkins
+	Ansible/ Puppet/ Chef/
+	Docker
+	K8S
+	AWS
+		
+		
 Devops Modules:
 	Devops Overview
 	Version Control Using Git and GIt hub
