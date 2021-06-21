@@ -114,7 +114,7 @@ Domains of AWS:
 									and public keys will keep secure.
 									
 	4) Storage - 1) S3 which works as bucket object kind of thing Your storage place is a bucket and then object in the bucket are know files in the root .
-				 2) CLoudfront which is your content delivery network 
+				 2) Cloudfront which is your content delivery network 
 				 3) Glacier is a plcae store archives because it is highly affortable 
 				
 	5) Networking - We have services like VPC(Virtual Private Cloud), Direct connect router 53( DNS)for connection within the AWS.
@@ -146,7 +146,7 @@ Agenta:
 				1) Infrastructure as a service (IaaS)
 					 With IaaS, you rent IT infrastructure—servers and virtual machines (VMs), storage, networks, operating systems—from a cloud provider on a pay-as-you-go basis.
 					 Services are	
-						a) Server and storage
+						a) Server and Storage
 						b) Networking firewall/security
 						c) Data center physical plant/building
 						
@@ -223,7 +223,7 @@ Agenta:
 		a) what is instance
 				1) An instance means virual server for runnung the applications on AWS EC2. It can be understood like a tiny part of the computer 
 					but it is actually it is all virtual. 
-				2) For virtual environmentrment where run different OS as a isolated way and run the application using instance called instance of AWS
+				2) For virtual environment where run different OS as a isolated way and run the application using instance called instance of AWS
 				
 		b) AWS EC2 service
 				1) Amazon Elastic Compute Cloud is a web server from amazon that provider resizeable and reusable computer service in the cloud.
@@ -276,12 +276,11 @@ Agenta:
 				4) Gives freedom to select the AWS resouce like EC2 instance.
 				
 			Components of Elastic beans talk?
-				Application :An application is a collections of components including enivorment, versions and env configuration where the application is similar to the folder.
+				Application : An application is a collections of components including enivorment, versions and env configuration where the application is similar to the folder.
 								which means all required file to that application is stored in the folder ex:tomcat-app and like elastic beanstalk will create a separate folder.
 								in AWS teams, The folder is called as Application.
 								
-				Application version:
-									If we upload in the Elastic Beanstalk and launched the application, but some changes in the code and again deploy the code in
+				Application version:If we upload in the Elastic Beanstalk and launched the application, but some changes in the code and again deploy the code in
 										elastic beanstalk and launched it, thus, AWS follow different in it by changes in the version called running verion or application version
 				
 				Environment : It is place where run the application. elastic beanstalk will create multiple environment for the single application 
